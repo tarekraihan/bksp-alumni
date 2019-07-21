@@ -1,0 +1,39 @@
+/*custom css*/
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    background:#fff;
+}
+/*for menu*/
+.logo{
+    width: 70px;
+}
+.bg-light {
+    background-color: #004720 !important;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+/*for form*/
+.bksp_form {
+    background: linear-gradient(to right, green, red, green, red);
+    margin-top: 5px;
+    padding: 3px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.bksp_form_inner{
+    background: #fff;
+    padding:10px;
+}
+
+.bksp_form input,textarea::placeholder{
+    font-size:14px;
+}
+textarea{
+    resize:none;
+}
