@@ -2,7 +2,16 @@
     <div class="container">
         <div class="bksp_form">
             <div class="bksp_form_inner">
-            <form>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <img class="logo form_logo" src="<?php echo base_url('assets/front_end/images/bksp_logo.png');?>" alt="BKSP LOGO">
+                    </div>
+                    <div class="col-sm-9">
+                        <h1>Alumni Association of BKSP</h1>
+                    </div>
+                </div>
+                <h3>Membership Form</h3>
+            <form class="bksp_member_form" class="bksp_member_form" method="post" action="" enctype="multipart/form-data">
                 <div class="form-group row">
                     <label for="name" class="col-sm-3 col-form-label">নাম/ Name</label>
                     <div class="col-sm-9">
