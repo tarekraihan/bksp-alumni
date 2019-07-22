@@ -10,7 +10,7 @@
                         <h1>Alumni Association of BKSP</h1>
                     </div>
                 </div>
-                <form class="bksp_member_form" class="bksp_member_form" method="post" action="" enctype="multipart/form-data">
+                <form class="bksp_member_form" method="post" action="" enctype="multipart/form-data">
                     
                     <div class="form-group row">
                         <div class="col-sm-9">
