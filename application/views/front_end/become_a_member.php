@@ -15,66 +15,40 @@
                     </div>
 
                 </div>
-                <h3 id="">Membership Form</h3>
-                <h5>(only valid member can apply)</h5>
-            <form class="bksp_member_form" class="bksp_member_form" method="post" action="" enctype="multipart/form-data">
-                <div class="form-group row">
-                    <label for="ProfilePicture" class="col-sm-3 col-form-label"><span id="ProfilePictureLabel"></span>upload your picture</label>
-                    <div class="col-sm-9">
-                        <input type="file"  class="form-control" id="ProfilePicture" name="ProfilePicture">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="Name" class="col-sm-3 col-form-label"><span id="NameLabel"></span></label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control" id="Name" placeholder="">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="SpouseName" class="col-sm-3 col-form-label"><span id="SpouseNameLabel"></span></label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control" name="SpouseName" id="SpouseName" placeholder="">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="FatherName" class="col-sm-3 col-form-label"><span id="FatherNameLabel"></span></label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control" name="FatherName" id="FatherName" placeholder="">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="MotherName" class="col-sm-3 col-form-label"><span id="MotherNameLabel"></span></label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control" name="MotherName" id="MotherName" placeholder="">
-                    </div>
-                </div>
-                <div class="form-group form-row">
-                    <label for="BKSPAdmissionYear" class="col-sm-4 col-form-label">বিকেএসপিতে ভর্তি সাল/ BKSP Admission Year</label>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" name="BKSPAdmissionYear" id="BKSPAdmissionYear" placeholder="বিকেএসপিতে ভর্তি সাল/BKSP Admission Year">
-                    </div>
+                <form class="bksp_member_form" method="post" action="" enctype="multipart/form-data">
+                    
                     <div class="form-group row">
-                        <label for="name" class="col-sm-3 col-form-label">নাম/ Name</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="name" placeholder="নাম/ Name">
+                            <h3 class="membership">Membership Form</h3>
+                            <h5>(only valid member can apply)</h5>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="picture-box border border-success">upload your picture</div>
+                            <input type="file" id="picture_upload">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="SpouseName" class="col-sm-3 col-form-label">স্বামী/ স্ত্রীর নাম/ Spouse's Name</label>
+                        <label for="Name" class="col-sm-3 col-form-label"><span id="NameLabel"></span></label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="SpouseName" placeholder="স্বামী/স্ত্রীর নাম/Spouse's Name">
+                            <input type="text" class="form-control" id="Name" name="Name" placeholder="">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="FatherName" class="col-sm-3 col-form-label">বাবার নাম/ Father's Name</label>
+                        <label for="SpouseName" class="col-sm-3 col-form-label"><span id="SpouseNameLabel"></span></label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="FatherName" placeholder="বাবার নাম/ Father's Name:">
+                            <input type="text" class="form-control" id="SpouseName" name="SpouseName" placeholder="">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="MotherName" class="col-sm-3 col-form-label">মায়ের নাম/ Mother's Name</label>
+                        <label for="FatherName" class="col-sm-3 col-form-label"><span id="FatherNameLabel"></span></label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="MotherName" placeholder="মায়ের নাম/Mother's Name">
+                            <input type="text" class="form-control" id="FatherName" name="FatherName" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="MotherName" class="col-sm-3 col-form-label"><span id="MotherNameLabel"></span></label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="MotherName" name="MotherName" placeholder="">
                         </div>
                     </div>
                     <div class="form-group form-row">

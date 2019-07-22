@@ -19,6 +19,12 @@ body{
     font-weight: 700;
 }
 /*for form*/
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    color: #ED1C24 !important;
+}
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+    color: #ED1C24 !important;
+}
 .form_logo{
     float: right;
 }
@@ -29,13 +35,13 @@ body{
 .bksp_form_inner h3 {
     text-align: center;
     color: red;
-    /* margin-left: 220px; */
+    margin-left: 220px;
     margin-top: 38px;
     font-size: 36px;
 }
 .bksp_form_inner h5 {
     text-align: center;
-    /* margin-left: 220px; */
+    margin-left: 220px;
 }
 .bksp_form {
     background: linear-gradient(to right, green, red, green, red);
@@ -63,3 +69,49 @@ textarea{
     text-align: center;
     text-transform: uppercase;
 }
+/*for home page*/
+/*for Bootstrap Carousel*/
+.carousel-inner>.carousel-item {
+    -webkit-transition: -webkit-transform 1.2s ease-in-out !important;
+    -o-transition: -o-transform 1.2s ease-in-out !important;
+    transition: transform 1.2s ease-in-out !important;
+}
+@-webkit-keyframes zoom {
+    from {
+      -webkit-transform: scale(1, 1);
+    }
+    to {
+      -webkit-transform: scale(1.5, 1.5);
+    }
+  }
+  @keyframes zoom {
+    from {
+      transform: scale(1, 1);
+    }
+    to {
+      transform: scale(1.5, 1.5);
+    }
+  }
+  .carousel-inner .carousel-item > img {
+    -moz-animation: zoom 40s;
+    -ms-animation: zoom 40s;
+    -webkit-animation: zoom 40s;
+    -o-animation: zoom 40s;
+    animation: zoom 40s;
+  }
+  /*for about*/
+  .about h2{
+      color: #004720;
+  }
+  .about p{
+      text-align: justify;
+  }
+  .blog h2{
+    color: #004720;
+    }
+   .blog p{
+        text-align: justify;
+    }
+    .blog img{
+        width:100%;
+    }
