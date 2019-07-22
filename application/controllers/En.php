@@ -25,6 +25,22 @@ class En extends FrontEnd_Controller
 
         $this->render_template('front_end/become_a_member', $this->data);
     }
+
+    public function ajax_change_language(){
+        $language =  $this->input->post('language');
+        $languages = [
+                "EN" => [
+                    name => "Name",
+                    father_name => "Father\'s Name"
+                ],
+                "BN" => [
+                    name => "নাম",
+                    father_name => "বাবার নাম"
+                ]
+            ];
+
+        return json_encode($languages[$language]);
+    }
     
 
 }
