@@ -8,38 +8,43 @@
                     </div>
                     <div class="col-sm-9">
                         <h1>Alumni Association of BKSP</h1>
+                        <select name="language" id="language" class="float-right">
+                            <option value="EN">ENGLISH</option>
+                            <option value="BN">BANGLA</option>
+                        </select>
                     </div>
+
                 </div>
-                <h3>Membership Form</h3>
+                <h3 id="">Membership Form</h3>
             <form class="bksp_member_form" class="bksp_member_form" method="post" action="" enctype="multipart/form-data">
                 <div class="form-group row">
-                    <label for="name" class="col-sm-3 col-form-label">নাম/ Name</label>
+                    <label for="Name" class="col-sm-3 col-form-label"><span id="NameLabel"></span></label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" id="name" placeholder="নাম/ Name">
+                        <input type="text" class="form-control" id="Name" placeholder="">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="SpouseName" class="col-sm-3 col-form-label">স্বামী/ স্ত্রীর নাম/ Spouse's Name</label>
+                    <label for="SpouseName" class="col-sm-3 col-form-label"><span id="SpouseNameLabel"></span></label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" id="SpouseName" placeholder="স্বামী/স্ত্রীর নাম/Spouse's Name">
+                        <input type="text" class="form-control" name="SpouseName" id="SpouseName" placeholder="">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="FatherName" class="col-sm-3 col-form-label">বাবার নাম/ Father's Name</label>
+                    <label for="FatherName" class="col-sm-3 col-form-label"><span id="FatherNameLabel"></span></label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" id="FatherName" placeholder="বাবার নাম/ Father's Name:">
+                        <input type="text" class="form-control" name="FatherName" id="FatherName" placeholder="">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="MotherName" class="col-sm-3 col-form-label">মায়ের নাম/ Mother's Name</label>
+                    <label for="MotherName" class="col-sm-3 col-form-label"><span id="MotherNameLabel"></span></label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" id="MotherName" placeholder="মায়ের নাম/Mother's Name">
+                        <input type="text" class="form-control" name="MotherName" id="MotherName" placeholder="">
                     </div>
                 </div>
                 <div class="form-group form-row">
                     <label for="BKSPAdmissionYear" class="col-sm-4 col-form-label">বিকেএসপিতে ভর্তি সাল/ BKSP Admission Year</label>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id="BKSPAdmissionYear" placeholder="বিকেএসপিতে ভর্তি সাল/BKSP Admission Year">
+                        <input type="text" class="form-control" name="BKSPAdmissionYear" id="BKSPAdmissionYear" placeholder="বিকেএসপিতে ভর্তি সাল/BKSP Admission Year">
                     </div>
                     <label for="CadetNo" class="col-sm-2 col-form-label">ক্যাডেট নং/ Cadet No</label>
                     <div class="col-sm-3">

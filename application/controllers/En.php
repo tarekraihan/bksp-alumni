@@ -30,16 +30,28 @@ class En extends FrontEnd_Controller
         $language =  $this->input->post('language');
         $languages = [
                 "EN" => [
-                    name => "Name",
-                    father_name => "Father\'s Name"
+                    "NameLabel" => "Name",
+                    "NamePlaceholder" => "Name",
+                    "SpouseNameLabel" => "Spouse's Name",
+                    "SpouseNamePlaceholder" => "Spouse's Name",
+                    "FatherNameLabel" => "Father's Name",
+                    "FatherNamePlaceholder" => "Father's Name",
+                    "MotherNameLabel" => "Mother's Name",
+                    "MotherNamePlaceholder" => "Mother's Name",
                 ],
                 "BN" => [
-                    name => "নাম",
-                    father_name => "বাবার নাম"
+                    "NameLabel" => "নাম",
+                    "NamePlaceholder" => "নাম",
+                    "SpouseNameLabel" => "স্বামী/স্ত্রীর নাম",
+                    "SpouseNamePlaceholder" => "স্বামী/স্ত্রীর নাম",
+                    "FatherNameLabel" => "বাবার নাম",
+                    "FatherNamePlaceholder" => "বাবার নাম",
+                    "MotherNameLabel" => "মায়ের নাম",
+                    "MotherNamePlaceholder" => "মায়ের নাম",
                 ]
             ];
 
-        return json_encode($languages[$language]);
+        echo json_encode($languages[$language]);
     }
     
 
