@@ -100,18 +100,48 @@ textarea{
     animation: zoom 40s;
   }
   /*for about*/
-  .about h2{
-      color: #004720;
+  .about img{
+      width:100%;
   }
-  .about p{
-      text-align: justify;
-  }
-  .blog h2{
+  .about h2 {
     color: #004720;
-    }
-   .blog p{
-        text-align: justify;
-    }
-    .blog img{
-        width:100%;
-    }
+    margin-top: 20px;
+    border-bottom: 3px solid #BA0000;
+    padding-bottom: 8px;
+}
+.about p{
+    text-align: justify;
+    margin-top: 20px;
+}
+.blog h2{
+    color: #004720;
+    margin-top: 20px;
+    border-bottom: 3px solid #BA0000;
+    padding-bottom: 8px;
+}
+.blog p{
+    text-align: justify;
+}
+.blog img{
+    width:100%;
+    margin-bottom: 31px;
+}
+.games_hilights img{
+    width: 280px;
+    height: 250px;
+}
+.games_hilights h2{
+    color: #004720;
+    margin-top: 20px;
+    border-bottom: 3px solid #BA0000;
+    padding-bottom: 8px;
+}
+.member_list{
+    width: 100%;
+}
+.member_list h2{
+    color: #004720;
+    margin-top: 20px;
+    padding-bottom: 8px;
+    text-align: center;
+}

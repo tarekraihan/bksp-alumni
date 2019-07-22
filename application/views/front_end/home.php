@@ -27,9 +27,10 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-sm-8">
+        <div class="col-sm-7">
             <div class="about">
                 <h2>ABOUT BKSP</h2>
+                <img src="<?php echo base_url('assets/front_end/images/about-bksp-banner.jpg');?>" alt="">
                 <P>
                     Bangladesh Krira Shikkha Protishtan (BKSP) (Bengali: বাংলাদেশ ক্রীড়া শিক্ষা প্রতিষ্ঠান, Bangladesh Sports Education 
                     Institute) is the national sports institute of Bangladesh. It is residential and is located at Savar, 
@@ -43,13 +44,39 @@
                     four hostels for boys and one for girls. They receive food, medical treatment and sports materials.
                     Tuition fees are determined on the basis of family income.
                 </P>
+                <button type="button" class="btn btn-outline-success float-right">Read More</button>
             </div>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-5">
             <div class="blog">
                 <h2>Featured Post</h2>
                 <img src="<?php echo base_url('assets/front_end/images/blog_post.jpg');?>" alt="">
+                <h5>What is Lorem Ipsum?</h5>
+                <p>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the 
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and 
+                    scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap 
+                    into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                    release ...
+                </p>
+                <button type="button" class="btn btn-outline-danger">Read More</button>
             </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="games_hilights">
+            <h2>Game Highlights</h2>
+            <img src="<?php echo base_url('assets/front_end/images/badminton.jpg');?>" alt="badminton" class="img-thumbnail">
+            <img src="<?php echo base_url('assets/front_end/images/bolibol.jpg');?>" alt="bolibol" class="img-thumbnail">
+            <img src="<?php echo base_url('assets/front_end/images/archery.jpg');?>" alt="archery" class="img-thumbnail">
+            <img src="<?php echo base_url('assets/front_end/images/basketball.jpg');?>" alt="basketball" class="img-thumbnail">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="member_list">
+            <h2>Over 200 members already registerd!</h2>
         </div>
     </div>
 </div>
