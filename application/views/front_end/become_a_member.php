@@ -15,7 +15,7 @@
                     </div>
 
                 </div>
-                <form class="bksp_member_form" method="post" action="" enctype="multipart/form-data">
+                <form class="bksp_member_form" method="post" action="<?php base_url('en/become_a_member') ?>" enctype="multipart/form-data">
                     
                     <div class="form-group row">
                         <div class="col-sm-9">
@@ -23,114 +23,154 @@
                             <h5>(only valid member can apply)</h5>
                         </div>
                         <div class="col-sm-3">
-                            <div class="picture-box border border-success">upload your picture</div>
-                            <input type="file" id="picture_upload">
+                            <!-- <div class="picture-box border border-success">Upload your picture</div> -->
+                            <div class="kv-avatar">
+                                <div class="file-loading">
+                                    <input type="file" id="picture_upload" name="picture_upload" >
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    <?php if($this->session->flashdata('success')): ?>
+                        <div class="alert alert-success alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <?php echo $this->session->flashdata('success'); ?>
+                        </div>
+                    <?php elseif($this->session->flashdata('error')): ?>
+                        <div class="alert alert-error alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <?php echo $this->session->flashdata('error'); ?>
+                        </div>
+                    <?php endif; ?>
                     <div class="form-group row">
                         <label for="Name" class="col-sm-3 col-form-label"><span id="NameLabel"></span></label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="Name" name="Name" placeholder="">
+                            <input type="text" class="form-control" id="Name" name="Name" placeholder=""  value ="<?php echo (set_value('Name')) ? set_value('Name') : "" ;?>">
+                            <span class="text-danger"><?php echo form_error('Name'); ?></span>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="SpouseName" class="col-sm-3 col-form-label"><span id="SpouseNameLabel"></span></label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="SpouseName" name="SpouseName" placeholder="">
+                            <input type="text" class="form-control" id="SpouseName" name="SpouseName" placeholder="" value ="<?php echo (set_value('SpouseName')) ? set_value('SpouseName') : "" ;?>">
+                            <span class="text-danger"><?php echo form_error('SpouseName'); ?></span>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="FatherName" class="col-sm-3 col-form-label"><span id="FatherNameLabel"></span></label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="FatherName" name="FatherName" placeholder="">
+                            <input type="text" class="form-control" id="FatherName" name="FatherName" placeholder="" value ="<?php echo (set_value('FatherName')) ? set_value('FatherName') : "" ;?>">
+                            <span class="text-danger"><?php echo form_error('FatherName'); ?></span>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="MotherName" class="col-sm-3 col-form-label"><span id="MotherNameLabel"></span></label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="MotherName" name="MotherName" placeholder="">
+                            <input type="text" class="form-control" id="MotherName" name="MotherName" placeholder="" value ="<?php echo (set_value('MotherName')) ? set_value('MotherName') : "" ;?>">
+                            <span class="text-danger"><?php echo form_error('MotherName'); ?></span>
                         </div>
                     </div>
                     <div class="form-group form-row">
-                        <label for="BKSPAdmissionYear" class="col-sm-4 col-form-label">বিকেএসপিতে ভর্তি সাল/ BKSP Admission Year</label>
-                        <div class="col-sm-3">
-                            <input type="text" class="form-control" id="BKSPAdmissionYear" placeholder="বিকেএসপিতে ভর্তি সাল/BKSP Admission Year">
+                        <label for="BKSPAdmissionYear" class="col-sm-2 col-form-label"><span id="BKSPAdmissionYearLabel"></span></label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" name="BKSPAdmissionYear" id="BKSPAdmissionYear" placeholder="" value ="<?php echo (set_value('BKSPAdmissionYear')) ? set_value('BKSPAdmissionYear') : "" ;?>">
+                            <span class="text-danger"><?php echo form_error('BKSPAdmissionYear'); ?></span>
                         </div>
-                        <label for="CadetNo" class="col-sm-2 col-form-label">ক্যাডেট নং/ Cadet No</label>
-                        <div class="col-sm-3">
-                            <input type="text" class="form-control" id="CadetNo" placeholder="ক্যাডেট নং/Cadet No">
+                        <label for="CadetNo" class="col-sm-2 col-form-label"><span id="CadetNoLabel"></span></label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" name="CadetNo" id="CadetNo" placeholder=""  value ="<?php echo (set_value('CadetNo')) ? set_value('CadetNo') : "" ;?>">
+                            <span class="text-danger"><?php echo form_error('CadetNo'); ?></span>
                         </div>
                     </div>
                     <div class="form-group form-row">
-                        <label for="YearOfSSC" class="col-sm-2 col-form-label">এসএসসি সাল/Year of SSC</label>
+                        <label for="YearOfSSC" class="col-sm-2 col-form-label"><span id="YearOfSSCLabel"></span></label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" id="YearOfSSC" placeholder="এসএসসি সাল/Year of SSC">
+                            <input type="text" class="form-control" name="YearOfSSC" id="YearOfSSC" placeholder=""  value ="<?php echo (set_value('YearOfSSC')) ? set_value('YearOfSSC') : "" ;?>">
+                            <span class="text-danger"><?php echo form_error('YearOfSSC'); ?></span>
                         </div>
-                        <label for="YearOfHSC" class="col-sm-2 col-form-label">এইচএসসি সাল/ Year of HSC</label>
+                        <label for="YearOfHSC" class="col-sm-2 col-form-label"><span id="YearOfHSCLabel"></span></label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" id="YearOfHSC" placeholder="এইচএসসি সাল/ Year of HSC">
+                            <input type="text" class="form-control" id="YearOfHSC" name="YearOfHSC" placeholder=""  value ="<?php echo (set_value('YearOfHSC')) ? set_value('YearOfHSC') : "" ;?>">
+                            <span class="text-danger"><?php echo form_error('YearOfHSC'); ?></span>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="Address" class="col-sm-2 col-form-label">ঠিকানা/ Address</label>
+                        <label for="Address" class="col-sm-2 col-form-label"><span id="AddressLabel"></span></label>
                         <div class="col-sm-10">
-                            <textarea class="form-control" id="Address" rows="3" placeholder="ঠিকানা/ Address"></textarea>
+                            <textarea class="form-control" id="Address" name="Address" rows="3" placeholder=""><?php echo (set_value('Address')) ? set_value('Address') : "" ;?></textarea>
+                            <span class="text-danger"><?php echo form_error('Address'); ?></span>
                         </div>
                     </div>
                     <div class="form-group form-row">
-                        <label for="BloodGroup" class="col-sm-2 col-form-label">রক্তের গ্রুপ/ Blood Group</label>
+                        <label for="BloodGroup" class="col-sm-2 col-form-label"><span id="BloodGroupLabel"></span></label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" id="BloodGroup" placeholder="রক্তের গ্রুপ/ Blood Group">
+                            <input type="text" class="form-control" name="BloodGroup" id="BloodGroup" placeholder=""  value ="<?php echo (set_value('BloodGroup')) ? set_value('BloodGroup') : "" ;?>">
+                            <span class="text-danger"><?php echo form_error('BloodGroup'); ?></span>
                         </div>
-                        <label for="Religion" class="col-sm-2 col-form-label">ধর্ম/ Religion</label>
+                        <label for="Religion" class="col-sm-2 col-form-label"><span id="ReligionLabel"></span></label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" id="Religion" placeholder="ধর্ম/ Religion">
+                            <input type="text" class="form-control" name="Religion" id="Religion" placeholder="" value ="<?php echo (set_value('Religion')) ? set_value('Religion') : "" ;?>">
+                            <span class="text-danger"><?php echo form_error('Religion'); ?></span>
                         </div>
                     </div>
                     <div class="form-row form-group">
-                        <label for="Mobile" class="col-sm-2 col-form-label">মোবাইল নং/ Mobile No</label>
+                        <label for="Mobile" class="col-sm-2 col-form-label"><span id="MobileLabel"></span></label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" id="Mobile" placeholder="মোবাইল/ Mobile">
+                            <input type="text" class="form-control" id="Mobile" name="Mobile" placeholder="" value ="<?php echo (set_value('Mobile')) ? set_value('Mobile') : "" ;?>">
+                            <span class="text-danger"><?php echo form_error('Mobile'); ?></span>
                         </div>
-                        <label for="Phone" class="col-sm-2 col-form-label">ফোন নং/ Phone No</label>
+                        <label for="Phone" class="col-sm-2 col-form-label"><span id="PhoneLabel"></span></label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" id="Phone" placeholder="ফোন নং/ Phone">
+                            <input type="text" class="form-control" id="Phone" name="Phone" placeholder="" value ="<?php echo (set_value('Phone')) ? set_value('Phone') : "" ;?>">
+                            <span class="text-danger"><?php echo form_error('Phone'); ?></span>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="EmailFacebook" class="col-sm-4 col-form-label">ই-মেইল/ফেসবুক আইডি/ E-mail/ Facebook ID</label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control" id="EmailFacebook" placeholder="ই-মেইল/ফেসবুক আইডি/ E-mail/ Facebook ID">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="ProfessinalInformation" class="col-sm-3 col-form-label">পেশাদারি তথ্য/ Professinal Information</label>
+                        <label for="EmailAddress" class="col-sm-3 col-form-label"><span id="EmailAddressLabel"></span></label>
                         <div class="col-sm-9">
-                            <textarea class="form-control" id="ProfessinalInformation" rows="3" placeholder="পেশাদারি তথ্য/ Professinal Information"></textarea>
+                            <input type="email" class="form-control" id="EmailAddress" name="EmailAddress" placeholder=""  value ="<?php echo (set_value('EmailAddress')) ? set_value('EmailAddress') : "" ;?>">
+                            <span class="text-danger"><?php echo form_error('EmailAddress'); ?></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="FacebookId" class="col-sm-3 col-form-label"><span id="FacebookIdLabel"></span></label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="FacebookId" id="FacebookId" placeholder="" value ="<?php echo (set_value('FacebookId')) ? set_value('FacebookId') : "" ;?>">
+                            <span class="text-danger"><?php echo form_error('FacebookId'); ?></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="ProfessinalInformation" class="col-sm-3 col-form-label"><span id="ProfessinalInformationLabel"></span></label>
+                        <div class="col-sm-9">
+                            <textarea class="form-control" id="ProfessinalInformation" name="ProfessinalInformation" rows="3" placeholder=""><?php echo (set_value('ProfessinalInformation')) ? set_value('ProfessinalInformation') : "" ;?></textarea>
+                            <span class="text-danger"><?php echo form_error('ProfessinalInformation'); ?></span>
                         </div>
                     </div>
                     <div class="form-group form-row">
-                        <label for="NID" class="col-sm-3 col-form-label">জাতীয় পরিচয় পত্র নম্বর/ NID No</label>
+                        <label for="NID" class="col-sm-3 col-form-label"><span id="NIDLabel"></span></label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" id="NID" placeholder="জাতীয় পরিচয় পত্র নম্বর/ NID No">
+                            <input type="text" class="form-control" id="NID" name="NID" placeholder=""  value ="<?php echo (set_value('NID')) ? set_value('NID') : "" ;?>">
+                            <span class="text-danger"><?php echo form_error('NID'); ?></span>
                         </div>
-                        <label for="DateOfBirth" class="col-sm-2 col-form-label">জন্ম তারিখ/ Date of Birth</label>
+                        <label for="DateOfBirth" class="col-sm-2 col-form-label"><span id="DateOfBirthLabel"></span></label>
                         <div class="col-sm-3">
-                            <input type="text" class="form-control" id="DateOfBirth" placeholder="dd/month/year">
+                            <input type="text" class="form-control" id="DateOfBirth" name="DateOfBirth" placeholder="" value ="<?php echo (set_value('DateOfBirth')) ? set_value('DateOfBirth') : "" ;?>">
+                            <span class="text-danger"><?php echo form_error('DateOfBirth'); ?></span>
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <!-- <div class="form-group row">
                         <label for="MemberNo" class="col-sm-3 col-form-label">সদস্য নম্বর/ Member No</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="MemberNo" placeholder="সদস্য নম্বর/ Member No">
                         </div>
-                    </div>
+                    </div> -->
                     <div class="form-group row">
                         <div class="col-sm-12">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="agree">
+                                <input class="form-check-input" type="checkbox" id="agree" name="agree">
+                                <span class="text-danger"><?php echo form_error('agree'); ?></span>
                                 <label class="form-check-label" for="agree">
-                                আমি ............... স্বজ্ঞানে, Alumni Association of BKSP এর সকল কাজে নিজে স্বেচ্ছায় নিয়োজিত রাখবো এবং গঠনতন্ত্রের সকল শর্ত মেনে চলব
+                                <span id="disclaimer">আমি <span id="MemberName">...............</span> স্বজ্ঞানে, Alumni Association of BKSP এর সকল কাজে নিজে স্বেচ্ছায় নিয়োজিত রাখবো এবং গঠনতন্ত্রের সকল শর্ত মেনে চলব<span>
                                 </label>
                             </div>
                         </div>
