@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 21, 2019 at 01:42 PM
+-- Generation Time: Jul 23, 2019 at 08:37 PM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.1
 
@@ -67,6 +67,76 @@ INSERT INTO `groups` (`id`, `group_name`, `permission`) VALUES
 (1, 'Administrator', 'a:24:{i:0;s:10:\"createUser\";i:1;s:10:\"updateUser\";i:2;s:8:\"viewUser\";i:3;s:10:\"deleteUser\";i:4;s:11:\"createGroup\";i:5;s:11:\"updateGroup\";i:6;s:9:\"viewGroup\";i:7;s:11:\"deleteGroup\";i:8;s:14:\"updateCategory\";i:9;s:12:\"viewCategory\";i:10;s:14:\"deleteCategory\";i:11;s:13:\"createProduct\";i:12;s:13:\"updateProduct\";i:13;s:11:\"viewProduct\";i:14;s:13:\"deleteProduct\";i:15;s:11:\"createOrder\";i:16;s:11:\"updateOrder\";i:17;s:9:\"viewOrder\";i:18;s:11:\"deleteOrder\";i:19;s:14:\"createPurchase\";i:20;s:14:\"updatePurchase\";i:21;s:12:\"viewPurchase\";i:22;s:14:\"deletePurchase\";i:23;s:13:\"updateCompany\";}'),
 (5, 'Manager', 'a:17:{i:0;s:10:\"updateUser\";i:1;s:8:\"viewUser\";i:2;s:11:\"createGroup\";i:3;s:11:\"updateGroup\";i:4;s:9:\"viewGroup\";i:5;s:14:\"createCategory\";i:6;s:14:\"updateCategory\";i:7;s:12:\"viewCategory\";i:8;s:13:\"createProduct\";i:9;s:13:\"updateProduct\";i:10;s:11:\"viewProduct\";i:11;s:11:\"createOrder\";i:12;s:11:\"updateOrder\";i:13;s:9:\"viewOrder\";i:14;s:14:\"createPurchase\";i:15;s:14:\"updatePurchase\";i:16;s:13:\"updateCompany\";}'),
 (6, 'user', 'a:19:{i:0;s:10:\"createUser\";i:1;s:10:\"updateUser\";i:2;s:8:\"viewUser\";i:3;s:11:\"createGroup\";i:4;s:11:\"updateGroup\";i:5;s:9:\"viewGroup\";i:6;s:14:\"createCategory\";i:7;s:14:\"updateCategory\";i:8;s:12:\"viewCategory\";i:9;s:13:\"createProduct\";i:10;s:13:\"updateProduct\";i:11;s:11:\"viewProduct\";i:12;s:13:\"deleteProduct\";i:13;s:11:\"createOrder\";i:14;s:11:\"updateOrder\";i:15;s:9:\"viewOrder\";i:16;s:14:\"createPurchase\";i:17;s:14:\"updatePurchase\";i:18;s:13:\"updateCompany\";}');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `members`
+--
+
+CREATE TABLE `members` (
+  `id` int(12) NOT NULL,
+  `name` varchar(200) DEFAULT NULL,
+  `spouse_name` varchar(100) DEFAULT NULL,
+  `father_name` varchar(100) DEFAULT NULL,
+  `mother_name` varchar(100) DEFAULT NULL,
+  `bksp_admission_year` year(4) DEFAULT NULL,
+  `cadet_no` varchar(15) DEFAULT NULL,
+  `year_of_ssc` year(4) DEFAULT NULL,
+  `year_of_hsc` year(4) DEFAULT NULL,
+  `address` text,
+  `blood_group` varchar(10) DEFAULT NULL,
+  `religious` varchar(50) DEFAULT NULL,
+  `mobile` varchar(19) DEFAULT NULL,
+  `phone` varchar(18) DEFAULT NULL,
+  `email_address` varchar(100) DEFAULT NULL,
+  `facebook_id` varchar(255) DEFAULT NULL,
+  `professional_info` text,
+  `nid` varchar(20) DEFAULT NULL,
+  `profile_picture` varchar(255) DEFAULT NULL,
+  `date_of_birth` date DEFAULT NULL,
+  `is_approved` int(1) DEFAULT NULL,
+  `is_deleted` int(1) DEFAULT NULL,
+  `approved_by` int(10) DEFAULT NULL,
+  `deleted_by` int(10) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `temp_members`
+--
+
+CREATE TABLE `temp_members` (
+  `id` int(12) NOT NULL,
+  `name` varchar(200) DEFAULT NULL,
+  `spouse_name` varchar(100) DEFAULT NULL,
+  `father_name` varchar(100) DEFAULT NULL,
+  `mother_name` varchar(100) DEFAULT NULL,
+  `bksp_admission_year` year(4) DEFAULT NULL,
+  `cadet_no` varchar(15) DEFAULT NULL,
+  `year_of_ssc` year(4) DEFAULT NULL,
+  `year_of_hsc` year(4) DEFAULT NULL,
+  `address` text,
+  `blood_group` varchar(10) DEFAULT NULL,
+  `religious` varchar(50) DEFAULT NULL,
+  `mobile` varchar(19) DEFAULT NULL,
+  `phone` varchar(18) DEFAULT NULL,
+  `email_address` varchar(100) DEFAULT NULL,
+  `facebook_id` varchar(255) DEFAULT NULL,
+  `professional_info` text,
+  `nid` varchar(20) DEFAULT NULL,
+  `profile_picture` varchar(255) DEFAULT NULL,
+  `date_of_birth` date DEFAULT NULL,
+  `is_approved` int(1) DEFAULT NULL,
+  `is_deleted` int(1) DEFAULT NULL,
+  `approved_by` int(10) DEFAULT NULL,
+  `deleted_by` int(10) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -135,6 +205,18 @@ ALTER TABLE `groups`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `members`
+--
+ALTER TABLE `members`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `temp_members`
+--
+ALTER TABLE `temp_members`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -161,6 +243,18 @@ ALTER TABLE `company`
 --
 ALTER TABLE `groups`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `members`
+--
+ALTER TABLE `members`
+  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `temp_members`
+--
+ALTER TABLE `temp_members`
+  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
