@@ -26,6 +26,12 @@ class En extends FrontEnd_Controller
         $this->render_template('front_end/become_a_member', $this->data);
     }
 
+    public function contact(){
+        $this->data['page_title'] = 'Contact Us';
+
+        $this->render_template('front_end/contact', $this->data);
+    }
+
     public function ajax_change_language(){
         $language =  $this->input->post('language');
         $languages = [

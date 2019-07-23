@@ -117,6 +117,14 @@ textarea{
     text-align: justify;
     margin-top: 20px;
 }
+.about button a{
+    text-decoration: none;
+    color: #28a745 !important;
+}
+.about button:hover a{
+    color: #fff !important;
+}
+
 .blog h2{
     color: #004720;
     margin-top: 20px;
@@ -142,10 +150,33 @@ textarea{
 }
 .member_list{
     width: 100%;
+    padding: 50px;
 }
 .member_list h2{
     color: #004720;
     margin-top: 20px;
     padding-bottom: 8px;
     text-align: center;
+}
+.member_list img{
+    width:100px;
+    padding: 5px;
+}
+/*about us*/
+.about_us{
+    background-image: url(../images/about-bksp-banner2.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 365px;
+}
+.about_content{
+    text-align:justify;
+    padding:20px;
+}
+/*for footer*/
+.footer {
+    background-color: #004720;
+    padding: 20px;
+    color: #fff;
 }

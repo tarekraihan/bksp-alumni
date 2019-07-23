@@ -32,19 +32,18 @@
                 <h2>ABOUT BKSP</h2>
                 <img src="<?php echo base_url('assets/front_end/images/about-bksp-banner.jpg');?>" alt="">
                 <P>
-                    Bangladesh Krira Shikkha Protishtan (BKSP) (Bengali: বাংলাদেশ ক্রীড়া শিক্ষা প্রতিষ্ঠান, Bangladesh Sports Education 
-                    Institute) is the national sports institute of Bangladesh. It is residential and is located at Savar, 
-                    about 28 kilometres (17 mi) north-west of the capital, Dhaka, and about 8 kilometres (5.0 mi) north of
-                    the Sriti Soudho. It is a government-funded autonomous institution.
+                  Sport has a very prominent role in modern society. It is important to an individual, a group, a 
+                  nation- indeed the world. Throughout the world sport has a popular appeal among people of all ages and
+                  both sexes. It is being considered as an important criterion for the enhancement of prestige and image
+                  of any nation. Huge financial investment, scientific research work and extensive media coverage of 
+                  sports allover indicate its significance in the modern world. Over the years, all the nations of the
+                  world have been inspired by the above values and have entered into this sphere in a big way, thus
+                  making attainment of high sports standards even more difficult at the international level. In our
+                  country, the urge to promote sports, both in the Government and the private sectors, was always there.
+                  The prevailing socio-economic condition during the early years denied the scope to provide adequate 
+                  infrastructure facilities and appropriate coaching facilities, 
                 </P>
-                <P>
-                    Bangladesh Krira Shikkha Protishtan was established in 1986 with the objective of developing sports in 
-                    Bangladesh. The Director General is the chief executive of the institute.
-                    Students receive a general education as well as specialized sports training. They are accommodated in
-                    four hostels for boys and one for girls. They receive food, medical treatment and sports materials.
-                    Tuition fees are determined on the basis of family income.
-                </P>
-                <button type="button" class="btn btn-outline-success float-right">Read More</button>
+                <button type="button" class="btn btn-outline-success float-right"><a href="<?php echo base_url('en/about_us');?>">Read More</a></button>
             </div>
         </div>
         <div class="col-sm-5">
@@ -71,12 +70,36 @@
             <img src="<?php echo base_url('assets/front_end/images/bolibol.jpg');?>" alt="bolibol" class="img-thumbnail">
             <img src="<?php echo base_url('assets/front_end/images/archery.jpg');?>" alt="archery" class="img-thumbnail">
             <img src="<?php echo base_url('assets/front_end/images/basketball.jpg');?>" alt="basketball" class="img-thumbnail">
+            <img src="<?php echo base_url('assets/front_end/images/badminton.jpg');?>" alt="badminton" class="img-thumbnail">
+            <img src="<?php echo base_url('assets/front_end/images/bolibol.jpg');?>" alt="bolibol" class="img-thumbnail">
+            <img src="<?php echo base_url('assets/front_end/images/archery.jpg');?>" alt="archery" class="img-thumbnail">
+            <img src="<?php echo base_url('assets/front_end/images/basketball.jpg');?>" alt="basketball" class="img-thumbnail">
         </div>
     </div>
 
     <div class="row">
         <div class="member_list">
             <h2>Over 200 members already registerd!</h2>
+            <img src="<?php echo base_url('assets/front_end/images/masrafi-mortuza.jpg');?>" alt="masrafi-mortuza" class="rounded-circle">
+            <img src="<?php echo base_url('assets/front_end/images/Shakib-Al-Hasan.jpg');?>" alt="Shakib-Al-Hasan" class="rounded-circle">
+            <img src="<?php echo base_url('assets/front_end/images/mushfiqur-rahim.jpg');?>" alt="mushfiqur-rahim" class="rounded-circle">
+            <img src="<?php echo base_url('assets/front_end/images/masrafi-mortuza.jpg');?>" alt="masrafi-mortuza" class="rounded-circle">
+            <img src="<?php echo base_url('assets/front_end/images/Shakib-Al-Hasan.jpg');?>" alt="Shakib-Al-Hasan" class="rounded-circle">
+            <img src="<?php echo base_url('assets/front_end/images/mushfiqur-rahim.jpg');?>" alt="mushfiqur-rahim" class="rounded-circle">
+            <img src="<?php echo base_url('assets/front_end/images/masrafi-mortuza.jpg');?>" alt="masrafi-mortuza" class="rounded-circle">
+            <img src="<?php echo base_url('assets/front_end/images/Shakib-Al-Hasan.jpg');?>" alt="Shakib-Al-Hasan" class="rounded-circle">
+            <img src="<?php echo base_url('assets/front_end/images/mushfiqur-rahim.jpg');?>" alt="mushfiqur-rahim" class="rounded-circle">
+            <img src="<?php echo base_url('assets/front_end/images/masrafi-mortuza.jpg');?>" alt="masrafi-mortuza" class="rounded-circle">
+            <img src="<?php echo base_url('assets/front_end/images/Shakib-Al-Hasan.jpg');?>" alt="Shakib-Al-Hasan" class="rounded-circle">
+            <img src="<?php echo base_url('assets/front_end/images/mushfiqur-rahim.jpg');?>" alt="mushfiqur-rahim" class="rounded-circle">
+            <img src="<?php echo base_url('assets/front_end/images/masrafi-mortuza.jpg');?>" alt="masrafi-mortuza" class="rounded-circle">
+            <img src="<?php echo base_url('assets/front_end/images/Shakib-Al-Hasan.jpg');?>" alt="Shakib-Al-Hasan" class="rounded-circle">
+            <img src="<?php echo base_url('assets/front_end/images/mushfiqur-rahim.jpg');?>" alt="mushfiqur-rahim" class="rounded-circle">
+            <img src="<?php echo base_url('assets/front_end/images/Shakib-Al-Hasan.jpg');?>" alt="Shakib-Al-Hasan" class="rounded-circle">
+            <img src="<?php echo base_url('assets/front_end/images/mushfiqur-rahim.jpg');?>" alt="mushfiqur-rahim" class="rounded-circle">
+            <img src="<?php echo base_url('assets/front_end/images/masrafi-mortuza.jpg');?>" alt="masrafi-mortuza" class="rounded-circle">
+            <img src="<?php echo base_url('assets/front_end/images/Shakib-Al-Hasan.jpg');?>" alt="Shakib-Al-Hasan" class="rounded-circle">
+            <img src="<?php echo base_url('assets/front_end/images/mushfiqur-rahim.jpg');?>" alt="mushfiqur-rahim" class="rounded-circle">
         </div>
     </div>
 </div>

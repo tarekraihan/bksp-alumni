@@ -11,13 +11,16 @@
             <a class="nav-link" href="<?php echo base_url('en/index');?>">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About Us</a>
+            <a class="nav-link" href="<?php echo base_url('en/about_us');?>">About Us</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url('en/become_a_member');?>">Become Member</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url('en/contact');?>">Contact</a>
           </li>
         </ul>
       </div>
