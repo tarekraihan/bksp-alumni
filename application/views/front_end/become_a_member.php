@@ -15,7 +15,7 @@
                     </div>
 
                 </div>
-                <form class="bksp_member_form" method="post" action="<?php base_url('en/become_a_member') ?>" enctype="multipart/form-data">
+                <form class="bksp_member_form" id="bksp_member_form" method="post" action="<?php base_url('en/become_a_member') ?>" enctype="multipart/form-data">
                     
                     <div class="form-group row">
                         <div class="col-sm-9">
@@ -152,9 +152,28 @@
                             <input type="text" class="form-control" id="NID" name="NID" placeholder=""  value ="<?php echo (set_value('NID')) ? set_value('NID') : "" ;?>">
                             <span class="text-danger"><?php echo form_error('NID'); ?></span>
                         </div>
+                        <label for="nid_upload" class="col-sm-2 col-form-label"><span id="nid_uploadLabel"></span></label>
+                        <div class="col-sm-3">
+                            <input type="file" class="form-control" id="nid_upload" name="nid_upload" accept="image/jp2,image/png">
+                            <span class="text-danger"><?php echo form_error('nid_upload'); ?></span>
+                        </div>
+                    </div>
+                    <div class="form-group form-row">
+                        <label for="Gender" class="col-sm-3 col-form-label"><span id="GenderLabel"></span></label>
+                        <div class="col-sm-4">
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="Male" name="Gender" class="custom-control-input"  value="Male" <?php echo (set_value('Gender') == 'Male') ? "checked" : "" ;?>>
+                                <label class="custom-control-label" for="Male">Male</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="Female" name="Gender" class="custom-control-input">
+                                <label class="custom-control-label" for="Female"  value="Female" <?php echo (set_value('Gender') == 'Female') ? "checked" : "" ;?>>Female</label>
+                            </div>
+                            <span class="text-danger"><?php echo form_error('Gender'); ?></span>
+                        </div>
                         <label for="DateOfBirth" class="col-sm-2 col-form-label"><span id="DateOfBirthLabel"></span></label>
                         <div class="col-sm-3">
-                            <input type="text" class="form-control" id="DateOfBirth" name="DateOfBirth" placeholder="" value ="<?php echo (set_value('DateOfBirth')) ? set_value('DateOfBirth') : "" ;?>">
+                            <input type="text" class="form-control datepicker" id="DateOfBirth" name="DateOfBirth" placeholder="" value ="<?php echo (set_value('DateOfBirth')) ? set_value('DateOfBirth') : "" ;?>">
                             <span class="text-danger"><?php echo form_error('DateOfBirth'); ?></span>
                         </div>
                     </div>

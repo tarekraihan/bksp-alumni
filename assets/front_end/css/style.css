@@ -73,6 +73,9 @@ textarea{
     text-align: center;
     text-transform: uppercase;
 }
+.error {
+    color:red;
+}
 /*for home page*/
 /*for Bootstrap Carousel*/
 .carousel-inner>.carousel-item {

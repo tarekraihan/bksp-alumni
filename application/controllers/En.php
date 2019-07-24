@@ -42,9 +42,11 @@ class En extends FrontEnd_Controller
 		$this->form_validation->set_rules('NID', 'NID', 'trim|required');
 		$this->form_validation->set_rules('DateOfBirth', 'DateOfBirth', 'trim|required');
 		$this->form_validation->set_rules('agree', 'Disclaimer', 'required');
+		$this->form_validation->set_rules('Gender', 'Gender', 'required');
 		if ($this->form_validation->run() == TRUE) {
             // true case
         	$upload_image = $this->upload_image();
+        	$upload_nid = $this->upload_nid();
            
         	$data = array(
         		'name' => $this->input->post('Name'),
@@ -64,8 +66,10 @@ class En extends FrontEnd_Controller
                 'facebook_id' => $this->input->post('FacebookId'),
                 'professional_info' => $this->input->post('ProfessinalInformation'),
                 'nid' => $this->input->post('NID'),
+                'gender' => $this->input->post('Gender'),
                 'date_of_birth' => date('Y-m-d',strtotime($this->input->post('DateOfBirth'))),
         		'profile_picture' => $upload_image,        		
+        		'nid_doc' => $upload_nid,        		
                 'created_at' => date("Y-m-d H:i:s")
         	);
 
@@ -131,6 +135,8 @@ class En extends FrontEnd_Controller
                     "NID" => "NID No",
                     "DateOfBirthLabel" => "Date of Birth",
                     "DateOfBirth" => "Date of Birth",
+                    "nid_uploadLabel" => "Upload NID",
+                    "GenderLabel" => "Gender"
                 ],
                 "BN" => [
                     "NameLabel" => "নাম",
@@ -169,6 +175,8 @@ class En extends FrontEnd_Controller
                     "NID" => "জাতীয় পরিচয় পত্র নম্বর",
                     "DateOfBirthLabel" => "জন্ম তারিখ",
                     "DateOfBirth" => "জন্ম তারিখ",
+                    "nid_uploadLabel" => "জাতীয় পরিচয় পত্র",
+                    "GenderLabel" => "Gender"
                 ]
             ];
 
@@ -183,7 +191,7 @@ class En extends FrontEnd_Controller
     {
         $config['upload_path'] = 'assets/front_end/members';
         $config['file_name'] =  uniqid();
-        $config['allowed_types'] = 'jpg|png|jpeg|PNG|JPEG';
+        $config['allowed_types'] = 'jpg|png|jpeg';
         $config['max_size'] = '1000';
 
         // $config['max_width']  = '1024';s
@@ -199,6 +207,30 @@ class En extends FrontEnd_Controller
         {
             $data = array('upload_data' => $this->upload->data());
             $type = explode('.', $_FILES['picture_upload']['name']);
+            $type = $type[count($type) - 1];
+            
+            $path = $config['upload_path'].'/'.$config['file_name'].'.'.$type;
+            return ($data == true) ? $path : false;            
+        }
+    }
+
+    public function upload_nid()
+    {
+        $config['upload_path'] = 'assets/front_end/nid';
+        $config['file_name'] =  uniqid();
+        $config['allowed_types'] = 'jpg|png|jpeg';
+        $config['max_size'] = '2000';
+
+        $this->load->library('upload', $config);
+        if ( ! $this->upload->do_upload('nid_upload'))
+        {
+            $error = $this->upload->display_errors();
+            return $error;
+        }
+        else
+        {
+            $data = array('upload_data' => $this->upload->data());
+            $type = explode('.', $_FILES['nid_upload']['name']);
             $type = $type[count($type) - 1];
             
             $path = $config['upload_path'].'/'.$config['file_name'].'.'.$type;

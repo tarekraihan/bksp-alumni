@@ -4,6 +4,9 @@
     <script src="<?php echo base_url('assets/front_end/js/popper.min.js');?>"></script>
     <script src="<?php echo base_url('assets/front_end/js/bootstrap.min.js');?>" ></script>
     <script src="<?php echo base_url('assets/plugins/fileinput/fileinput.min.js') ?>"></script>
+    <script src="<?php echo base_url('assets/plugins/jquery-validator/jquery.validate.js') ?>"></script>
+	  <script src="<?php echo base_url('assets/plugins/jquery-validator/additional-methods.js') ?>"></script>
+	  <script src="<?php echo base_url('assets/plugins/datepicker/js/bootstrap-datepicker.js') ?>"></script>
     <script>
       $(document).ready(function(){
         
@@ -24,6 +27,22 @@
             layoutTemplates: {main2: '{preview} {browse}'},
             allowedFileExtensions: ["jpg", "png", "PNG", "JPEG", "jpeg"]
         });
+        // $("#nid_upload").fileinput({
+        //     overwriteInitial: true,
+        //     maxFileSize: 1000,
+        //     // showClose: false,
+        //     showCaption: false,
+        //     browseLabel: '',
+        //     // removeLabel: '',
+        //     browseIcon: '<button type="button" class="btn btn-outline-dark btn-block">Select NID</button>',
+        //     // removeIcon: '<i class="glyphicon glyphicon-remove"></i>',
+        //     // removeTitle: 'Cancel or reset changes',
+        //     elErrorContainer: '#kv-avatar-errors-1',
+        //     msgErrorClass: 'alert alert-block alert-danger',
+        //     // defaultPreviewContent: '<img src="'+ base_url+'assets/images/avater.png" alt="Your Avatar" width="200">',
+        //     layoutTemplates: {main2: '{browse}'},
+        //     allowedFileExtensions: ["jpg", "png", "PNG", "JPEG", "jpeg", "pdf", "PDF"]
+        // });
 
         $('#language').on('change', function() {
           var language = $(this).val();
@@ -68,7 +87,9 @@
               $('#ProfessinalInformation').attr('placeholder',response.ProfessinalInformation);
               $('#NIDLabel').text(response.NIDLabel);
               $('#NID').attr('placeholder',response.NID);
+              $('#nid_uploadLabel').text(response.nid_uploadLabel);
               $('#DateOfBirthLabel').text(response.DateOfBirthLabel);
+              $('#GenderLabel').text(response.GenderLabel);
               $('#DateOfBirth').attr('placeholder',response.DateOfBirth);
             }
           });
@@ -77,8 +98,36 @@
         $('#Name').on('blur', function(){
           var name = $(this).val();
           $('#MemberName').text(name);
-        })
+        });
 
+        $("#bksp_member_form").validate({
+          rules: {
+            picture_upload: "required",
+            Name: "required",
+            FatherName: "required",
+            MotherName: "required",
+            BKSPAdmissionYear: "required",
+            CadetNo: "required",
+            YearOfSSC: "required",
+            YearOfHSC: "required",
+            Address: "required",
+            BloodGroup: "required",
+            Religion: "required",
+            Mobile: "required",
+            EmailAddress: {
+              required: true,
+              email: true
+            },
+            NID: "required",
+            DateOfBirth: "required",
+            nid_upload: "required",
+            Gender: "required",
+            agree: "required",
+          }
+        });
+        $('#DateOfBirth').datepicker({
+				format: 'dd-mm-yyyy'
+			});
       });
 
     </script>
