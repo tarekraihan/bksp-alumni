@@ -8,13 +8,13 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="<?php echo base_url('en/index');?>">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link Home" href="<?php echo base_url('en/index');?>">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('en/about_us');?>">About Us</a>
+            <a class="nav-link About" href="<?php echo base_url('en/about_us');?>">About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('en/become_a_member');?>">Become Member</a>
+            <a class="nav-link Member" href="<?php echo base_url('en/become_a_member');?>">Become Member</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Blog</a>

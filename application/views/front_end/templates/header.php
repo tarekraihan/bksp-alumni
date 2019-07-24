@@ -10,6 +10,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="<?php echo base_url('assets/front_end/css/style.css');?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/plugins/fileinput/fileinput.min.css') ?>">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text&display=swap" rel="stylesheet">
     
     <title><?php echo $page_title ? $page_title : "BKSP" ; ?></title>
   </head>

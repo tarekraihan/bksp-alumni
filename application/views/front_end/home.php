@@ -98,8 +98,6 @@
             <img src="<?php echo base_url('assets/front_end/images/Shakib-Al-Hasan.jpg');?>" alt="Shakib-Al-Hasan" class="rounded-circle">
             <img src="<?php echo base_url('assets/front_end/images/mushfiqur-rahim.jpg');?>" alt="mushfiqur-rahim" class="rounded-circle">
             <img src="<?php echo base_url('assets/front_end/images/masrafi-mortuza.jpg');?>" alt="masrafi-mortuza" class="rounded-circle">
-            <img src="<?php echo base_url('assets/front_end/images/Shakib-Al-Hasan.jpg');?>" alt="Shakib-Al-Hasan" class="rounded-circle">
-            <img src="<?php echo base_url('assets/front_end/images/mushfiqur-rahim.jpg');?>" alt="mushfiqur-rahim" class="rounded-circle">
         </div>
     </div>
 </div>

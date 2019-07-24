@@ -5,8 +5,13 @@
 }
 body{
     background:#fff;
+    font-family: 'Crimson Text', serif;
+    font-size: 20px;
 }
 /*for menu*/
+.navbar-light .navbar-nav .nav-link:active {
+    color: #ED1C24 !important;
+}
 .logo{
     width: 70px;
 }
@@ -179,4 +184,11 @@ textarea{
     background-color: #004720;
     padding: 20px;
     color: #fff;
+}
+/*for contact*/
+.contact_content {
+    margin-top: 22px;
+    line-height: 30px;
+    border: 1px solid #004720;
+    padding: 20px;
 }
