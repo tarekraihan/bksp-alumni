@@ -3,7 +3,7 @@
         <div class="bksp_form">
             <div class="bksp_form_inner">
                 <div class="row">
-                    <div class="col-sm-3">
+                    <div class="col-sm-3 fm_log">
                         <img class="logo form_logo" src="<?php echo base_url('assets/front_end/images/bksp_logo.png');?>" alt="BKSP LOGO">
                     </div>
                     <div class="col-sm-9">
@@ -25,7 +25,7 @@
                         <div class="col-sm-3">
                             <!-- <div class="picture-box border border-success">Upload your picture</div> -->
                             <div class="kv-avatar">
-                                <div class="file-loading">
+                                <div class="file-loading img-fluid">
                                     <input type="file" id="picture_upload" name="picture_upload" >
                                 </div>
                             </div>
@@ -195,8 +195,8 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <div class="col-sm-10">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <div class="col-sm-6 offset-md-3">
+                        <button type="submit" class="btn btn-outline-success btn-lg btn-block">Submit</button>
                         </div>
                     </div>
                 </form>

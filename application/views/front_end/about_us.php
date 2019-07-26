@@ -1,4 +1,6 @@
-<div class="about_us"></div>
+<div class="about_us">
+    <img src="<?php echo base_url('assets/front_end/images/about-bksp-banner2.jpg');?>" alt="about-bksp-banner2" class="img-fluid">
+</div>
 <div class="container">
     <div class="row">
         <div class="about_content">

@@ -23,7 +23,7 @@
             // removeTitle: 'Cancel or reset changes',
             elErrorContainer: '#kv-avatar-errors-1',
             msgErrorClass: 'alert alert-block alert-danger',
-            defaultPreviewContent: '<img src="'+ base_url+'assets/images/avater.png" alt="Your Avatar" width="200">',
+            defaultPreviewContent: '<img class="img-fluid" src="'+ base_url+'assets/images/avater.png" alt="Your Avatar" width="200">',
             layoutTemplates: {main2: '{preview} {browse}'},
             allowedFileExtensions: ["jpg", "png", "PNG", "JPEG", "jpeg"]
         });

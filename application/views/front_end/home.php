@@ -30,7 +30,7 @@
         <div class="col-sm-7">
             <div class="about">
                 <h2>ABOUT BKSP</h2>
-                <img src="<?php echo base_url('assets/front_end/images/about-bksp-banner.jpg');?>" alt="">
+                <img src="<?php echo base_url('assets/front_end/images/about-bksp-banner.jpg');?>" class="img-fluid" alt="about-bksp-banner">
                 <P>
                   Sport has a very prominent role in modern society. It is important to an individual, a group, a 
                   nation- indeed the world. Throughout the world sport has a popular appeal among people of all ages and
@@ -49,7 +49,7 @@
         <div class="col-sm-5">
             <div class="blog">
                 <h2>Featured Post</h2>
-                <img src="<?php echo base_url('assets/front_end/images/blog_post.jpg');?>" alt="">
+                <img src="<?php echo base_url('assets/front_end/images/blog_post.jpg');?>" class="img-fluid" alt="blog_post">
                 <h5>What is Lorem Ipsum?</h5>
                 <p>
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the 
@@ -66,14 +66,14 @@
     <div class="row">
         <div class="games_hilights">
             <h2>Game Highlights</h2>
-            <img src="<?php echo base_url('assets/front_end/images/badminton.jpg');?>" alt="badminton" class="img-thumbnail">
-            <img src="<?php echo base_url('assets/front_end/images/bolibol.jpg');?>" alt="bolibol" class="img-thumbnail">
-            <img src="<?php echo base_url('assets/front_end/images/archery.jpg');?>" alt="archery" class="img-thumbnail">
-            <img src="<?php echo base_url('assets/front_end/images/basketball.jpg');?>" alt="basketball" class="img-thumbnail">
-            <img src="<?php echo base_url('assets/front_end/images/badminton.jpg');?>" alt="badminton" class="img-thumbnail">
-            <img src="<?php echo base_url('assets/front_end/images/bolibol.jpg');?>" alt="bolibol" class="img-thumbnail">
-            <img src="<?php echo base_url('assets/front_end/images/archery.jpg');?>" alt="archery" class="img-thumbnail">
-            <img src="<?php echo base_url('assets/front_end/images/basketball.jpg');?>" alt="basketball" class="img-thumbnail">
+            <img src="<?php echo base_url('assets/front_end/images/badminton.jpg');?>" alt="badminton" class="img-thumbnail img-fluid">
+            <img src="<?php echo base_url('assets/front_end/images/bolibol.jpg');?>" alt="bolibol" class="img-thumbnail img-fluid">
+            <img src="<?php echo base_url('assets/front_end/images/archery.jpg');?>" alt="archery" class="img-thumbnail img-fluid">
+            <img src="<?php echo base_url('assets/front_end/images/basketball.jpg');?>" alt="basketball" class="img-thumbnail img-fluid">
+            <img src="<?php echo base_url('assets/front_end/images/badminton.jpg');?>" alt="badminton" class="img-thumbnail img-fluid">
+            <img src="<?php echo base_url('assets/front_end/images/bolibol.jpg');?>" alt="bolibol" class="img-thumbnail img-fluid">
+            <img src="<?php echo base_url('assets/front_end/images/archery.jpg');?>" alt="archery" class="img-thumbnail img-fluid">
+            <img src="<?php echo base_url('assets/front_end/images/basketball.jpg');?>" alt="basketball" class="img-thumbnail img-fluid">
         </div>
     </div>
 
