@@ -5,7 +5,7 @@ class En extends FrontEnd_Controller
 	public function __construct()
 	{
 		parent::__construct();
-        $this->load->model('Model_member');
+        $this->load->model('Model_application');
     }
 
     public function index(){
@@ -47,9 +47,11 @@ class En extends FrontEnd_Controller
             // true case
         	$upload_image = $this->upload_image();
         	$upload_nid = $this->upload_nid();
-           
+            $email = $this->input->post('EmailAddress');
+            $gender = $this->input->post('Gender');
+            $name =  $this->input->post('Name');
         	$data = array(
-        		'name' => $this->input->post('Name'),
+        		'name' =>  $name,
         		'spouse_name' => $this->input->post('SpouseName'),
         		'father_name' => $this->input->post('FatherName'),
                 'mother_name' => $this->input->post('MotherName'),
@@ -62,19 +64,34 @@ class En extends FrontEnd_Controller
                 'religious' => $this->input->post('Religion'),
                 'mobile' => $this->input->post('Mobile'),
                 'phone' => $this->input->post('Phone'),
-                'email_address' => $this->input->post('EmailAddress'),
+                'email_address' => $email,
                 'facebook_id' => $this->input->post('FacebookId'),
                 'professional_info' => $this->input->post('ProfessinalInformation'),
                 'nid' => $this->input->post('NID'),
-                'gender' => $this->input->post('Gender'),
+                'gender' => $gender,
                 'date_of_birth' => date('Y-m-d',strtotime($this->input->post('DateOfBirth'))),
-        		'profile_picture' => $upload_image,        		
+                'profile_picture' => $upload_image,
+                'is_approved' => 0,
+                'is_deleted' => 0,
         		'nid_doc' => $upload_nid,        		
                 'created_at' => date("Y-m-d H:i:s")
         	);
 
-        	$create = $this->Model_member->create($data);
+        	$create = $this->Model_application->create($data);
         	if($create == true) {
+                // Send Email Note yet Tested
+                // $this->load->library('email');
+                // $title = ($gender =='Male') ? 'Mr. ': 'Ms.';
+                // $title =. $name;
+
+                // $message = "Dear ". $title ."\r\n Thank your for your application."
+                // $this->email->from('bksp1983@yahoo.com', 'Alumni Association of BKSP');
+                // $this->email->to($email);
+
+                // $this->email->subject('Application in Alumni Association of BKSP');
+                // $this->email->message($message);
+                // $this->email->send();
+            
         		$this->session->set_flashdata('success', 'Successfully appplied');
         		redirect('En/become_a_member', 'refresh');
         	}
@@ -176,7 +193,7 @@ class En extends FrontEnd_Controller
                     "DateOfBirthLabel" => "জন্ম তারিখ",
                     "DateOfBirth" => "জন্ম তারিখ",
                     "nid_uploadLabel" => "জাতীয় পরিচয় পত্র",
-                    "GenderLabel" => "Gender"
+                    "GenderLabel" => "লিঙ্গ"
                 ]
             ];
 

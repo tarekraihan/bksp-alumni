@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 23, 2019 at 08:37 PM
+-- Generation Time: Jul 27, 2019 at 11:05 PM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.1
 
@@ -45,7 +45,7 @@ CREATE TABLE `company` (
 --
 
 INSERT INTO `company` (`id`, `company_name`, `address`, `phone`, `logo`, `country`, `vat_rate`, `tax_rate`, `currency`) VALUES
-(1, 'BKSP Admin', 'Ja-83 4th floor Mohakhali Wireless Gate', '+88018911222952', '', '', 0.00, 0.00, '');
+(1, 'Alumni Association of BKSP', 'Ja-83 4th floor Mohakhali Wireless Gate', '+88018911222952', '', '', 0.00, 0.00, '');
 
 -- --------------------------------------------------------
 
@@ -64,9 +64,9 @@ CREATE TABLE `groups` (
 --
 
 INSERT INTO `groups` (`id`, `group_name`, `permission`) VALUES
-(1, 'Administrator', 'a:24:{i:0;s:10:\"createUser\";i:1;s:10:\"updateUser\";i:2;s:8:\"viewUser\";i:3;s:10:\"deleteUser\";i:4;s:11:\"createGroup\";i:5;s:11:\"updateGroup\";i:6;s:9:\"viewGroup\";i:7;s:11:\"deleteGroup\";i:8;s:14:\"updateCategory\";i:9;s:12:\"viewCategory\";i:10;s:14:\"deleteCategory\";i:11;s:13:\"createProduct\";i:12;s:13:\"updateProduct\";i:13;s:11:\"viewProduct\";i:14;s:13:\"deleteProduct\";i:15;s:11:\"createOrder\";i:16;s:11:\"updateOrder\";i:17;s:9:\"viewOrder\";i:18;s:11:\"deleteOrder\";i:19;s:14:\"createPurchase\";i:20;s:14:\"updatePurchase\";i:21;s:12:\"viewPurchase\";i:22;s:14:\"deletePurchase\";i:23;s:13:\"updateCompany\";}'),
-(5, 'Manager', 'a:17:{i:0;s:10:\"updateUser\";i:1;s:8:\"viewUser\";i:2;s:11:\"createGroup\";i:3;s:11:\"updateGroup\";i:4;s:9:\"viewGroup\";i:5;s:14:\"createCategory\";i:6;s:14:\"updateCategory\";i:7;s:12:\"viewCategory\";i:8;s:13:\"createProduct\";i:9;s:13:\"updateProduct\";i:10;s:11:\"viewProduct\";i:11;s:11:\"createOrder\";i:12;s:11:\"updateOrder\";i:13;s:9:\"viewOrder\";i:14;s:14:\"createPurchase\";i:15;s:14:\"updatePurchase\";i:16;s:13:\"updateCompany\";}'),
-(6, 'user', 'a:19:{i:0;s:10:\"createUser\";i:1;s:10:\"updateUser\";i:2;s:8:\"viewUser\";i:3;s:11:\"createGroup\";i:4;s:11:\"updateGroup\";i:5;s:9:\"viewGroup\";i:6;s:14:\"createCategory\";i:7;s:14:\"updateCategory\";i:8;s:12:\"viewCategory\";i:9;s:13:\"createProduct\";i:10;s:13:\"updateProduct\";i:11;s:11:\"viewProduct\";i:12;s:13:\"deleteProduct\";i:13;s:11:\"createOrder\";i:14;s:11:\"updateOrder\";i:15;s:9:\"viewOrder\";i:16;s:14:\"createPurchase\";i:17;s:14:\"updatePurchase\";i:18;s:13:\"updateCompany\";}');
+(1, 'Administrator', 'a:15:{i:0;s:18:\"approveApplication\";i:1;s:15:\"viewApplication\";i:2;s:17:\"deleteApplication\";i:3;s:12:\"updateMember\";i:4;s:10:\"viewMember\";i:5;s:12:\"deleteMember\";i:6;s:10:\"createUser\";i:7;s:10:\"updateUser\";i:8;s:8:\"viewUser\";i:9;s:10:\"deleteUser\";i:10;s:11:\"createGroup\";i:11;s:11:\"updateGroup\";i:12;s:9:\"viewGroup\";i:13;s:11:\"deleteGroup\";i:14;s:13:\"updateCompany\";}'),
+(6, 'User', 'a:6:{i:0;s:18:\"approveApplication\";i:1;s:15:\"viewApplication\";i:2;s:12:\"updateMember\";i:3;s:10:\"viewMember\";i:4;s:8:\"viewUser\";i:5;s:11:\"createGroup\";}'),
+(7, 'Admin', 'a:15:{i:0;s:18:\"approveApplication\";i:1;s:15:\"viewApplication\";i:2;s:17:\"deleteApplication\";i:3;s:12:\"updateMember\";i:4;s:10:\"viewMember\";i:5;s:12:\"deleteMember\";i:6;s:10:\"createUser\";i:7;s:10:\"updateUser\";i:8;s:8:\"viewUser\";i:9;s:10:\"deleteUser\";i:10;s:11:\"createGroup\";i:11;s:11:\"updateGroup\";i:12;s:9:\"viewGroup\";i:13;s:11:\"deleteGroup\";i:14;s:13:\"updateCompany\";}');
 
 -- --------------------------------------------------------
 
@@ -93,8 +93,10 @@ CREATE TABLE `members` (
   `facebook_id` varchar(255) DEFAULT NULL,
   `professional_info` text,
   `nid` varchar(20) DEFAULT NULL,
+  `nid_doc` varchar(255) DEFAULT NULL,
   `profile_picture` varchar(255) DEFAULT NULL,
   `date_of_birth` date DEFAULT NULL,
+  `gender` varchar(15) DEFAULT NULL,
   `is_approved` int(1) DEFAULT NULL,
   `is_deleted` int(1) DEFAULT NULL,
   `approved_by` int(10) DEFAULT NULL,
@@ -128,8 +130,10 @@ CREATE TABLE `temp_members` (
   `facebook_id` varchar(255) DEFAULT NULL,
   `professional_info` text,
   `nid` varchar(20) DEFAULT NULL,
+  `nid_doc` varchar(255) DEFAULT NULL,
   `profile_picture` varchar(255) DEFAULT NULL,
   `date_of_birth` date DEFAULT NULL,
+  `gender` varchar(50) DEFAULT NULL,
   `is_approved` int(1) DEFAULT NULL,
   `is_deleted` int(1) DEFAULT NULL,
   `approved_by` int(10) DEFAULT NULL,
@@ -186,7 +190,7 @@ INSERT INTO `user_group` (`id`, `user_id`, `group_id`) VALUES
 (9, 8, 4),
 (10, 9, 5),
 (11, 10, 5),
-(12, 11, 6);
+(12, 11, 7);
 
 --
 -- Indexes for dumped tables
@@ -242,7 +246,7 @@ ALTER TABLE `company`
 -- AUTO_INCREMENT for table `groups`
 --
 ALTER TABLE `groups`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `members`
