@@ -11,7 +11,7 @@ class Dashboard extends Admin_Controller
 
 		$this->data['page_title'] = 'Dashboard';
 		
-		//$this->load->model('model_products');
+		$this->load->model('Model_application');
 		//$this->load->model('model_sales');
 		 $this->load->model('model_users');
 		//$this->load->model('model_purchase');
@@ -27,10 +27,10 @@ class Dashboard extends Admin_Controller
 
 		//$this->data['total_products'] = $this->model_products->countTotalProducts();
 		//$this->data['total_sales'] = $this->model_sales->countTotalSales();
-		$this->data['total_users'] = $this->model_users->countTotalUsers();
+		$this->data['new_application'] = $this->Model_application->countTotalApplication();
 		//$this->data['total_purchase'] = $this->model_purchase->countTotalPurchase();
 
-		$this->data['total_user'] = $this->model_users->countTotalUsers();
+		$this->data['total_member'] = $this->Model_application->countTotalMember();
 		//$this->data['total_category'] = $this->model_products->countTotalcategory();
 		//$this->data['total_attribures'] = $this->model_products->countTotalattribures();
 		//$this->data['total_stores'] = $this->model_stores->countTotalStores();

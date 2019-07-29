@@ -22,6 +22,7 @@
                         <div class="col-sm-9">
                             <h3 class="membership">Membership Form</h3>
                             <h5>(only valid member can apply)</h5>
+                           
                         </div>
                         <div class="col-sm-3">
                             <!-- <div class="picture-box border border-success">Upload your picture</div> -->
@@ -79,7 +80,7 @@
                         </div>
                         <label for="CadetNo" class="col-sm-2 col-form-label"><span id="CadetNoLabel"></span></label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" name="CadetNo" id="CadetNo" placeholder=""  value ="<?php echo (set_value('CadetNo')) ? set_value('CadetNo') : "" ;?>">
+                            <input type="text" class="form-control" name="CadetNo" id="CadetNo" placeholder=""  value ="<?php echo $this->session->userdata('cadetNO');?>" readonly>
                             <span class="text-danger"><?php echo form_error('CadetNo'); ?></span>
                         </div>
                     </div>
@@ -96,16 +97,16 @@
                         </div>
                     </div>
                     <div class="degree">
-                        <p class="degree_label">Only for degree Cadet </p>
+                        <p class="degree_label" id="onlyForDegreeLabel"> </p>
                         <div class="form-group form-row">
-                            <label for="YearOfAdmissi" class="col-sm-2 col-form-label"><span id="YearOfAdmissiLabel">Year Of Admission</span></label>
+                            <label for="YearOfAdmission" class="col-sm-2 col-form-label"><span id="DegreeYearOfAdmissionLabel"></span></label>
                             <div class="col-sm-4">
-                                <input type="text" class="form-control" name="YearOfAdmissi" id="YearOfAdmissi" placeholder="Year Of Admission"  value ="<?php echo (set_value('YearOfAdmissi')) ? set_value('YearOfAdmissi') : "" ;?>">
-                                <span class="text-danger"><?php echo form_error('YearOfSSC'); ?></span>
+                                <input type="text" class="form-control" name="YearOfAdmission" id="YearOfAdmission" placeholder=""  value ="<?php echo (set_value('YearOfAdmission')) ? set_value('YearOfAdmission') : "" ;?>">
+                                <span class="text-danger"><?php echo form_error('YearOfAdmission'); ?></span>
                             </div>
-                            <label for="YearOfPass" class="col-sm-2 col-form-label"><span id="YearOfPassLabel">Year Of Pass</span></label>
+                            <label for="YearOfPass" class="col-sm-2 col-form-label"><span id="YearOfPassLabel"></span></label>
                             <div class="col-sm-4">
-                                <input type="text" class="form-control" id="YearOfPass" name="YearOfPass" placeholder="Year Of Pass"  value ="<?php echo (set_value('YearOfHSC')) ? set_value('YearOfHSC') : "" ;?>">
+                                <input type="text" class="form-control" id="YearOfPass" name="YearOfPass" placeholder=""  value ="<?php echo (set_value('YearOfPass')) ? set_value('YearOfPass') : "" ;?>">
                                 <span class="text-danger"><?php echo form_error('YearOfPass'); ?></span>
                             </div>
                         </div>

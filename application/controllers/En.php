@@ -21,6 +21,7 @@ class En extends FrontEnd_Controller
     }
 
     public function become_a_member(){
+        $this->not_logged_in();
         $this->data['page_title'] = 'Become a Member';
 
 		$this->form_validation->set_rules('Name', 'Name', 'trim|required');
@@ -31,6 +32,8 @@ class En extends FrontEnd_Controller
 		$this->form_validation->set_rules('CadetNo', 'CadetNo', 'trim|required');
 		$this->form_validation->set_rules('YearOfSSC', 'YearOfSSC', 'trim|required');
 		$this->form_validation->set_rules('YearOfHSC', 'YearOfHSC', 'trim|required');
+		$this->form_validation->set_rules('YearOfAdmission', 'Year Of Admission', 'trim|required');
+		$this->form_validation->set_rules('YearOfPass', 'Year Of Pass', 'trim|required');
 		$this->form_validation->set_rules('Address', 'Address', 'trim|required');
 		$this->form_validation->set_rules('BloodGroup', 'BloodGroup', 'trim|required');
 		$this->form_validation->set_rules('Religion', 'Religion', 'trim|required');
@@ -41,12 +44,13 @@ class En extends FrontEnd_Controller
 		$this->form_validation->set_rules('ProfessinalInformation', 'ProfessinalInformation', 'trim');
 		$this->form_validation->set_rules('NID', 'NID', 'trim|required');
 		$this->form_validation->set_rules('DateOfBirth', 'DateOfBirth', 'trim|required');
-		$this->form_validation->set_rules('agree', 'Disclaimer', 'required');
+		// $this->form_validation->set_rules('agree', 'Disclaimer', 'required');
 		$this->form_validation->set_rules('Gender', 'Gender', 'required');
 		if ($this->form_validation->run() == TRUE) {
+           
             // true case
         	$upload_image = $this->upload_image();
-        	$upload_nid = $this->upload_nid();
+        	// $upload_nid = $this->upload_nid();
             $email = $this->input->post('EmailAddress');
             $gender = $this->input->post('Gender');
             $name =  $this->input->post('Name');
@@ -59,6 +63,8 @@ class En extends FrontEnd_Controller
                 'cadet_no' => $this->input->post('CadetNo'),                
                 'year_of_ssc' => date('Y',strtotime($this->input->post('YearOfSSC'))),
                 'year_of_hsc' => date('Y',strtotime($this->input->post('YearOfHSC'))),
+                'degree_cadet_admission_year' => date('Y',strtotime($this->input->post('YearOfAdmission'))),
+                'degree_cadet_passing_year' => date('Y',strtotime($this->input->post('YearOfPass'))),
                 'address' => $this->input->post('Address'),
                 'blood_group' => $this->input->post('BloodGroup'),
                 'religious' => $this->input->post('Religion'),
@@ -73,7 +79,7 @@ class En extends FrontEnd_Controller
                 'profile_picture' => $upload_image,
                 'is_approved' => 0,
                 'is_deleted' => 0,
-        		'nid_doc' => $upload_nid,        		
+        		// 'nid_doc' => $upload_nid,        		
                 'created_at' => date("Y-m-d H:i:s")
         	);
 
@@ -91,13 +97,13 @@ class En extends FrontEnd_Controller
                 // $this->email->subject('Application in Alumni Association of BKSP');
                 // $this->email->message($message);
                 // $this->email->send();
-            
+                $this->session->unset_userdata('cadetNo');
         		$this->session->set_flashdata('success', 'Successfully appplied');
-        		redirect('En/become_a_member', 'refresh');
+        		redirect('cadet-no', 'refresh');
         	}
         	else {
         		$this->session->set_flashdata('errors', 'Error occurred!!');
-        		redirect('En/become_a_member', 'refresh');
+        		redirect('become-a-member', 'refresh');
             }
             
         }else {
@@ -148,12 +154,17 @@ class En extends FrontEnd_Controller
                     "FacebookId" => "Facebook ID",
                     "ProfessinalInformationLabel" => "Professinal Information",
                     "ProfessinalInformation" => "Professinal Information",
-                    "NIDLabel" => "NID No",
-                    "NID" => "NID No",
+                    "NIDLabel" => "NID/Passport No",
+                    "NID" => "NID/Passport No",
                     "DateOfBirthLabel" => "Date of Birth",
                     "DateOfBirth" => "Date of Birth",
-                    "nid_uploadLabel" => "Upload NID",
-                    "GenderLabel" => "Gender"
+                    // "nid_uploadLabel" => "Upload NID",
+                    "GenderLabel" => "Gender",
+                    "DegreeYearOfAdmissionLabel" => "Year of Admission",
+                    "YearOfAdmission" => "Year of Admission",
+                    "YearOfPassLabel" => "Year of Pass",
+                    "YearOfPass" => "Year of Pass",
+                    "onlyForDegreeLabel" => "Only for degree Cadet",
                 ],
                 "BN" => [
                     "NameLabel" => "নাম",
@@ -188,12 +199,17 @@ class En extends FrontEnd_Controller
                     "FacebookId" => "ফেসবুক আইডি",
                     "ProfessinalInformationLabel" => "পেশাদারি তথ্য",
                     "ProfessinalInformation" => "পেশাদারি তথ্য",
-                    "NIDLabel" => "জাতীয় পরিচয় পত্র নম্বর",
-                    "NID" => "জাতীয় পরিচয় পত্র নম্বর",
+                    "NIDLabel" => "জাতীয় পরিচয় পত্র/ পাসপোর্ট নম্বর",
+                    "NID" => "জাতীয় পরিচয় পত্র /পাসপোর্ট নম্বর",
                     "DateOfBirthLabel" => "জন্ম তারিখ",
                     "DateOfBirth" => "জন্ম তারিখ",
-                    "nid_uploadLabel" => "জাতীয় পরিচয় পত্র",
-                    "GenderLabel" => "লিঙ্গ"
+                    // "nid_uploadLabel" => "জাতীয় পরিচয় পত্র",
+                    "GenderLabel" => "লিঙ্গ",
+                    "DegreeYearOfAdmissionLabel" => "ভর্তির সাল",
+                    "YearOfAdmission" => "ভর্তির সাল",
+                    "YearOfPassLabel" => "পরীক্ষোত্তীর্ণ হত্তয়ার সাল",
+                    "YearOfPass" => "পরীক্ষোত্তীর্ণ হত্তয়ার সাল",
+                    "onlyForDegreeLabel" => "কেবল ডিগ্রি ক্যাডেটের জন্য",
                 ]
             ];
 
@@ -231,28 +247,56 @@ class En extends FrontEnd_Controller
         }
     }
 
-    public function upload_nid()
-    {
-        $config['upload_path'] = 'assets/front_end/nid';
-        $config['file_name'] =  uniqid();
-        $config['allowed_types'] = 'jpg|png|jpeg';
-        $config['max_size'] = '2000';
+    // public function upload_nid()
+    // {
+    //     $config['upload_path'] = 'assets/front_end/nid';
+    //     $config['file_name'] =  uniqid();
+    //     $config['allowed_types'] = 'jpg|png|jpeg';
+    //     $config['max_size'] = '2000';
 
-        $this->load->library('upload', $config);
-        if ( ! $this->upload->do_upload('nid_upload'))
-        {
-            $error = $this->upload->display_errors();
-            return $error;
-        }
-        else
-        {
-            $data = array('upload_data' => $this->upload->data());
-            $type = explode('.', $_FILES['nid_upload']['name']);
-            $type = $type[count($type) - 1];
+    //     $this->load->library('upload', $config);
+    //     if ( ! $this->upload->do_upload('nid_upload'))
+    //     {
+    //         $error = $this->upload->display_errors();
+    //         return $error;
+    //     }
+    //     else
+    //     {
+    //         $data = array('upload_data' => $this->upload->data());
+    //         $type = explode('.', $_FILES['nid_upload']['name']);
+    //         $type = $type[count($type) - 1];
             
-            $path = $config['upload_path'].'/'.$config['file_name'].'.'.$type;
-            return ($data == true) ? $path : false;            
+    //         $path = $config['upload_path'].'/'.$config['file_name'].'.'.$type;
+    //         return ($data == true) ? $path : false;            
+    //     }
+    // }
+
+
+    
+    public function cadet_no(){
+        
+        $this->data['page_title'] = 'Become a Member';
+
+		$this->form_validation->set_rules('CadetNo', 'CadetNo', 'trim|required');
+		if ($this->form_validation->run() == TRUE) {
+           $categories = array("ATH", "AR", "BA", "BO", "C", "F", "GYM", "H", "JU", "KA", "SW", "SH", "T", "TT", "U", "TKD", "VO" );
+            $cadetNo = $this->input->post('CadetNo');
+            $devided = explode('-',$cadetNo);
+            $category = trim(strtoupper($devided[0]));
+
+            if (in_array($category, $categories)){
+                $this->session->set_userdata('cadetNo',$cadetNo);
+                redirect('become-a-member', 'refresh');
+            }else{
+                $this->session->set_flashdata('error', 'Invalid Cadet No !');
+        		redirect('cadet-no', 'refresh');
+            }
+            
+        }else {
+
+            $this->render_template('front_end/cadet_no', $this->data);
         }
     }
+
 
 }

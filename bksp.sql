@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 27, 2019 at 11:05 PM
+-- Generation Time: Jul 29, 2019 at 09:34 PM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.1
 
@@ -84,6 +84,8 @@ CREATE TABLE `members` (
   `cadet_no` varchar(15) DEFAULT NULL,
   `year_of_ssc` year(4) DEFAULT NULL,
   `year_of_hsc` year(4) DEFAULT NULL,
+  `degree_cadet_admission_year` varchar(10) DEFAULT NULL,
+  `degree_cadet_passing_year` varchar(10) DEFAULT NULL,
   `address` text,
   `blood_group` varchar(10) DEFAULT NULL,
   `religious` varchar(50) DEFAULT NULL,
@@ -121,6 +123,8 @@ CREATE TABLE `temp_members` (
   `cadet_no` varchar(15) DEFAULT NULL,
   `year_of_ssc` year(4) DEFAULT NULL,
   `year_of_hsc` year(4) DEFAULT NULL,
+  `degree_cadet_admission_year` varchar(10) DEFAULT NULL,
+  `degree_cadet_passing_year` varchar(10) DEFAULT NULL,
   `address` text,
   `blood_group` varchar(10) DEFAULT NULL,
   `religious` varchar(50) DEFAULT NULL,
@@ -137,6 +141,8 @@ CREATE TABLE `temp_members` (
   `is_approved` int(1) DEFAULT NULL,
   `is_deleted` int(1) DEFAULT NULL,
   `approved_by` int(10) DEFAULT NULL,
+  `decline_by` int(10) DEFAULT NULL,
+  `comment` text,
   `deleted_by` int(10) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP

@@ -15,7 +15,7 @@ class Model_application extends CI_Model
 			return $query->row_array();
 		}
 
-		$sql = "SELECT * FROM temp_members WHERE is_deleted = ?";
+		$sql = "SELECT * FROM temp_members WHERE is_deleted = ? ORDER BY id DESC";
 		$query = $this->db->query($sql, array(0));
 		return $query->result_array();
 	}
@@ -23,12 +23,12 @@ class Model_application extends CI_Model
 	public function getMemberData($Id= null) 
 	{
 		if($Id) {
-			$sql = "SELECT * FROM members WHERE id = ?";
+			$sql = "SELECT * FROM members WHERE id = ? ";
 			$query = $this->db->query($sql, array($Id));
 			return $query->row_array();
 		}
 
-		$sql = "SELECT * FROM members WHERE is_deleted = ?";
+		$sql = "SELECT * FROM members WHERE is_deleted = ?  ORDER BY id DESC";
 		$query = $this->db->query($sql, array(0));
 		return $query->result_array();
 	}
@@ -46,6 +46,8 @@ class Model_application extends CI_Model
 		
 		unset($member['id']);
 		unset($member['updated_at']);
+		unset($member['decline_by']);
+		unset($member['comment']);
 		$member['is_approved'] = 1;
 		$member['approved_by'] = $this->session->userdata('id');
 
@@ -63,7 +65,7 @@ class Model_application extends CI_Model
 	}
 
 	// public function edit($data, $id)
-	// {
+	// {ALTER TABLE `temp_members` ADD `decline_by` INT(10) NULL AFTER `approved_by`, ADD `comment` TEXT NULL AFTER `decline_by`;
 	// 	$this->db->where('id', $id);
 	// 	$update = $this->db->update('groups', $data);
 	// 	return ($update == true) ? true : false;	
@@ -74,5 +76,21 @@ class Model_application extends CI_Model
 	// 	$this->db->where('id', $id);
 	// 	$delete = $this->db->delete('groups');
 	// 	return ($delete == true) ? true : false;
-	// }
+	// }\
+
+	public function countTotalApplication()
+	{
+		$sql = "SELECT * FROM temp_members WHERE is_deleted = ?";
+		$query = $this->db->query($sql,array(0));
+		return $query->num_rows();
+	}
+	
+
+	public function countTotalMember()
+	{
+		$sql = "SELECT * FROM members";
+		$query = $this->db->query($sql);
+		return $query->num_rows();
+	}
+	
 }
