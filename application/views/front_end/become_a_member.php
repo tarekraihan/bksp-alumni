@@ -94,6 +94,21 @@
                             <span class="text-danger"><?php echo form_error('YearOfHSC'); ?></span>
                         </div>
                     </div>
+                    <div class="degree">
+                        <p class="degree_label">Only for degree Cadet </p>
+                        <div class="form-group form-row">
+                            <label for="YearOfAdmissi" class="col-sm-2 col-form-label"><span id="YearOfAdmissiLabel">Year Of Admission</span></label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" name="YearOfAdmissi" id="YearOfAdmissi" placeholder="Year Of Admission"  value ="<?php echo (set_value('YearOfAdmissi')) ? set_value('YearOfAdmissi') : "" ;?>">
+                                <span class="text-danger"><?php echo form_error('YearOfSSC'); ?></span>
+                            </div>
+                            <label for="YearOfPass" class="col-sm-2 col-form-label"><span id="YearOfPassLabel">Year Of Pass</span></label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="YearOfPass" name="YearOfPass" placeholder="Year Of Pass"  value ="<?php echo (set_value('YearOfHSC')) ? set_value('YearOfHSC') : "" ;?>">
+                                <span class="text-danger"><?php echo form_error('YearOfPass'); ?></span>
+                            </div>
+                        </div>
+                    </div>
                     <div class="form-group row">
                         <label for="Address" class="col-sm-2 col-form-label"><span id="AddressLabel"></span></label>
                         <div class="col-sm-10">
@@ -125,6 +140,25 @@
                             <span class="text-danger"><?php echo form_error('Phone'); ?></span>
                         </div>
                     </div>
+                    <div class="form-group form-row">
+                        <label for="Gender" class="col-sm-3 col-form-label"><span id="GenderLabel"></span></label>
+                        <div class="col-sm-4">
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="Male" name="Gender" class="custom-control-input"  value="Male" <?php echo (set_value('Gender') == 'Male') ? "checked" : "" ;?>>
+                                <label class="custom-control-label" for="Male">Male</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="Female" name="Gender" class="custom-control-input">
+                                <label class="custom-control-label" for="Female"  value="Female" <?php echo (set_value('Gender') == 'Female') ? "checked" : "" ;?>>Female</label>
+                            </div>
+                            <span class="text-danger"><?php echo form_error('Gender'); ?></span>
+                        </div>
+                        <label for="DateOfBirth" class="col-sm-2 col-form-label"><span id="DateOfBirthLabel"></span></label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control datepicker" id="DateOfBirth" name="DateOfBirth" placeholder="" value ="<?php echo (set_value('DateOfBirth')) ? set_value('DateOfBirth') : "" ;?>">
+                            <span class="text-danger"><?php echo form_error('DateOfBirth'); ?></span>
+                        </div>
+                    </div>
                     <div class="form-group row">
                         <label for="EmailAddress" class="col-sm-3 col-form-label"><span id="EmailAddressLabel"></span></label>
                         <div class="col-sm-9">
@@ -146,54 +180,36 @@
                             <span class="text-danger"><?php echo form_error('ProfessinalInformation'); ?></span>
                         </div>
                     </div>
-                    <div class="form-group form-row">
+                    <div class="form-group row">
                         <label for="NID" class="col-sm-3 col-form-label"><span id="NIDLabel"></span></label>
-                        <div class="col-sm-4">
+                        <div class="col-sm-9">
                             <input type="text" class="form-control" id="NID" name="NID" placeholder=""  value ="<?php echo (set_value('NID')) ? set_value('NID') : "" ;?>">
                             <span class="text-danger"><?php echo form_error('NID'); ?></span>
                         </div>
-                        <label for="nid_upload" class="col-sm-2 col-form-label"><span id="nid_uploadLabel"></span></label>
+                       <!-- <label for="nid_upload" class="col-sm-2 col-form-label"><span id="nid_uploadLabel"></span></label>
                         <div class="col-sm-3">
                             <input type="file" class="form-control" id="nid_upload" name="nid_upload" accept="image/jp2,image/png">
                             <span class="text-danger"><?php echo form_error('nid_upload'); ?></span>
-                        </div>
+                        </div>-->
                     </div>
-                    <div class="form-group form-row">
-                        <label for="Gender" class="col-sm-3 col-form-label"><span id="GenderLabel"></span></label>
-                        <div class="col-sm-4">
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="Male" name="Gender" class="custom-control-input"  value="Male" <?php echo (set_value('Gender') == 'Male') ? "checked" : "" ;?>>
-                                <label class="custom-control-label" for="Male">Male</label>
-                            </div>
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="Female" name="Gender" class="custom-control-input">
-                                <label class="custom-control-label" for="Female"  value="Female" <?php echo (set_value('Gender') == 'Female') ? "checked" : "" ;?>>Female</label>
-                            </div>
-                            <span class="text-danger"><?php echo form_error('Gender'); ?></span>
-                        </div>
-                        <label for="DateOfBirth" class="col-sm-2 col-form-label"><span id="DateOfBirthLabel"></span></label>
-                        <div class="col-sm-3">
-                            <input type="text" class="form-control datepicker" id="DateOfBirth" name="DateOfBirth" placeholder="" value ="<?php echo (set_value('DateOfBirth')) ? set_value('DateOfBirth') : "" ;?>">
-                            <span class="text-danger"><?php echo form_error('DateOfBirth'); ?></span>
-                        </div>
-                    </div>
+                    
                     <!-- <div class="form-group row">
                         <label for="MemberNo" class="col-sm-3 col-form-label">সদস্য নম্বর/ Member No</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="MemberNo" placeholder="সদস্য নম্বর/ Member No">
                         </div>
                     </div> -->
-                    <div class="form-group row">
+                   <!-- <div class="form-group row">
                         <div class="col-sm-12">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="agree" name="agree">
                                 <span class="text-danger"><?php echo form_error('agree'); ?></span>
                                 <label class="form-check-label" for="agree">
-                                <span id="disclaimer">আমি <span id="MemberName">...............</span> স্বজ্ঞানে, Alumni Association of BKSP এর সকল কাজে নিজে স্বেচ্ছায় নিয়োজিত রাখবো এবং গঠনতন্ত্রের সকল শর্ত মেনে চলব<span>
+                                 <span id="disclaimer">আমি <span id="MemberName">...............</span> স্বজ্ঞানে, Alumni Association of BKSP এর সকল কাজে নিজে স্বেচ্ছায় নিয়োজিত রাখবো এবং গঠনতন্ত্রের সকল শর্ত মেনে চলব<span>
                                 </label>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
                     <div class="form-group row">
                         <div class="col-sm-6 offset-md-3">
                         <button type="submit" class="btn btn-outline-success btn-lg btn-block">Submit</button>
