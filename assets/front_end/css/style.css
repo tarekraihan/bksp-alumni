@@ -7,11 +7,12 @@ body{
     background:#fff;
     font-family: 'Crimson Text', serif;
     font-size: 20px;
+    padding-top: 120px;
+}
+.clearfix{
+    clear: both;
 }
 /*for menu*/
-.navbar {
-    height: 120px;
-}
 .navbar-light .navbar-nav .nav-link:active {
     color: #ED1C24 !important;
 }
@@ -61,7 +62,7 @@ body{
 }
 .bksp_form {
     background: linear-gradient(to right, green, red, green, red);
-    margin: 5px 0;
+    margin: 20px 0;
     padding: 3px;
     border-radius: 5px;
     font-size: 14px;
@@ -128,7 +129,17 @@ textarea{
     -o-animation: zoom 40s;
     animation: zoom 40s;
   }
-  /*for about*/
+  /*for home about*/
+    .about {
+        margin: 150px 0;
+    }
+    .card-body {
+        background-color: #f3f0f0;
+    }
+    .card-body a {
+        text-decoration: none;
+        color: #004720;
+    }
   .about img{
       width:100%;
   }
@@ -149,7 +160,10 @@ textarea{
 .about button:hover a{
     color: #fff !important;
 }
-
+/*for home blog*/
+.blog{
+    margin: 150px 0;
+}
 .blog h2{
     color: #004720;
     margin-top: 20px;
@@ -163,19 +177,71 @@ textarea{
     width:100%;
     margin-bottom: 31px;
 }
+/*for flash button*/
+.flash-button {
+    background-color: #004720;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Arial;
+    font-size: 20px;
+    padding: 15px 10px;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    text-transform: uppercase;
+    margin-top: 300px;
+    -webkit-animation: glowing 1500ms infinite;
+    -moz-animation: glowing 1500ms infinite;
+    -o-animation: glowing 1500ms infinite;
+    animation: glowing 1500ms infinite;
+  }
+  @-webkit-keyframes glowing {
+    0% { background-color: #004720; -webkit-box-shadow: 0 0 3px #004720; }
+    50% { background-color: #B20000; -webkit-box-shadow: 0 0 40px #B20000; }
+    100% { background-color: #004720; -webkit-box-shadow: 0 0 3px #004720; }
+  }
+  
+  @-moz-keyframes glowing {
+    0% { background-color: #004720; -moz-box-shadow: 0 0 3px #004720; }
+    50% { background-color: #B20000; -moz-box-shadow: 0 0 40px #B20000; }
+    100% { background-color: #004720; -moz-box-shadow: 0 0 3px #004720; }
+  }
+  
+  @-o-keyframes glowing {
+    0% { background-color: #004720; box-shadow: 0 0 3px #004720; }
+    50% { background-color: #B20000; box-shadow: 0 0 40px #B20000; }
+    100% { background-color: #004720; box-shadow: 0 0 3px #004720; }
+  }
+  
+  @keyframes glowing {
+    0% { background-color: #004720; box-shadow: 0 0 3px #004720; }
+    50% { background-color: #B20000; box-shadow: 0 0 40px #B20000; }
+    100% { background-color: #004720; box-shadow: 0 0 3px #004720; }
+  }
+
+
 .games_hilights{
     text-align: center;
 }
 .games_hilights img{
     width: 280px;
     height: 250px;
-    margin-bottom: 5px;
 }
-.games_hilights h2{
+.highlight_title{
     color: #004720;
     margin-top: 20px;
     border-bottom: 3px solid #BA0000;
     padding-bottom: 8px;
+}
+.member_list_body {
+    width: 100%;
+    padding: 10px 0 60px 0;
+    background-color: #ddd;
+    margin-top: 70px;
 }
 .member_list{
     width: 100%;
@@ -195,6 +261,7 @@ textarea{
 /*about us*/
 .about_us img{
     width: 100%;
+    
 }
 .about_content{
     text-align:justify;
@@ -210,7 +277,7 @@ textarea{
 	background: #ED1C24;
 	padding: 0 6px 6px 6px;
 	border-radius: 5px;
-	color: #004720;
+	color: #fff;
 	text-decoration: none;
 }
 /*for contact*/
@@ -219,4 +286,24 @@ textarea{
     line-height: 30px;
     border: 1px solid #004720;
     padding: 20px;
+}
+
+#image-gallery .modal-footer{
+    display: block;
+  }
+  .thumb{
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+.reg_button{
+    text-transform: uppercase;
+    font-size:20px;
+    margin: 0 auto;
+}
+.reg_button a {
+    text-decoration: none;
+    color: #ed1c24;
+}
+.reg_button:hover a {
+    color: #fff !important;
 }

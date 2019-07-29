@@ -12,6 +12,13 @@
 		width: 230px !important;
 		height: 200px !important;
 	}
+	#navbarNav {
+		background: #004720 !important;
+		float: right !important;
+		text-align: right !important;
+		padding: 18px !important;
+		margin: -5px -16px 0 -16px !important;
+	}
 }
 
 @media only screen and (min-width: 800px) and (max-width: 979px){
@@ -73,6 +80,9 @@
 		margin-left: 64px !important;
 		font-size: 16px !important;
 	}
+	.bksp_title {
+		font-size: 22px !important;
+	}
 	
 }
 
@@ -94,6 +104,9 @@
 	}
 	.bksp_form_inner h5 {
 		margin-left: 0 !important;
+		font-size: 16px !important;
+	}
+	.bksp_title {
 		font-size: 16px !important;
 	}
 	
@@ -118,6 +131,9 @@
 		margin-left: 0 !important;
 		font-size: 16px !important;
 	}
+	.bksp_title {
+		font-size: 16px !important;
+	}
 }
 
 
@@ -140,6 +156,15 @@
 	.bksp_form_inner h5 {
 		margin-left: 0 !important;
 		font-size: 16px !important;
+	}
+	.logo {
+		margin-left: 97px !important;
+	}
+	.bksp_title {
+		font-size: 18px !important;
+	}
+	.contact_content {
+		margin-top: 40px !important;
 	}
 	
 }

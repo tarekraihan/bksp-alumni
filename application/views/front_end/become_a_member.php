@@ -1,3 +1,4 @@
+<div class="clearfix"></div>
 <div>
     <div class="container">
         <div class="bksp_form">
