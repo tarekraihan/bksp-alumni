@@ -9,11 +9,19 @@ body{
     font-size: 20px;
 }
 /*for menu*/
+.navbar {
+    height: 120px;
+}
 .navbar-light .navbar-nav .nav-link:active {
     color: #ED1C24 !important;
 }
 .logo{
-    width: 70px;
+    width: 110px;
+}
+.bksp_title {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 .bg-light {
     background-color: #004720 !important;
@@ -26,7 +34,6 @@ body{
 /*for form*/
 #language {
     margin-bottom: 10px;
-    
 }
 .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
     color: #ED1C24 !important;
@@ -80,6 +87,16 @@ textarea{
 }
 .error {
     color:red;
+}
+.degree_label {
+    font-weight: bold;
+    font-size: 22px;
+}
+.degree {
+    border: 1px solid #ddd;
+    padding: 0 10px;
+    margin-bottom: 8px;
+    border-radius: 5px;
 }
 /*for home page*/
 /*for Bootstrap Carousel*/
@@ -176,7 +193,7 @@ textarea{
     padding: 5px;
 }
 /*about us*/
-.about_us{
+.about_us img{
     width: 100%;
 }
 .about_content{
