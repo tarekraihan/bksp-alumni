@@ -56,13 +56,13 @@
               $('#NameLabel').text(response.NameLabel);
               $('#Name').attr('placeholder',response.NamePlaceholder);
               $('#SpouseNameLabel').text(response.SpouseNameLabel);
-              $('#SpouseName').attr('placeholder',response.SpouseName);
+              $('#SpouseName').attr('placeholder',response.SpouseNamePlaceholder);
               $('#FatherNameLabel').text(response.FatherNameLabel);
               $('#FatherName').attr('placeholder',response.FatherNamePlaceholder);
               $('#MotherNameLabel').text(response.MotherNameLabel);
               $('#MotherName').attr('placeholder',response.MotherNamePlaceholder);
               $('#BKSPAdmissionYearLabel').text(response.BKSPAdmissionYearLabel);
-              $('#BKSPAdmissionYear').attr('placeholder',response.BKSPAdmissionYear);
+              $('#BKSPAdmissionYear').attr('placeholder',response.BKSPAdmissionYearPlaceholder);
               $('#CadetNoLabel').text(response.CadetNoLabel);
               $('#CadetNo').attr('placeholder',response.CadetNo);
               $('#YearOfSSCLabel').text(response.YearOfSSCLabel);
@@ -87,7 +87,7 @@
               $('#ProfessinalInformation').attr('placeholder',response.ProfessinalInformation);
               $('#NIDLabel').text(response.NIDLabel);
               $('#NID').attr('placeholder',response.NID);
-              $('#nid_uploadLabel').text(response.nid_uploadLabel);
+              // $('#nid_uploadLabel').text(response.nid_uploadLabel);
               $('#DateOfBirthLabel').text(response.DateOfBirthLabel);
               $('#GenderLabel').text(response.GenderLabel);
               $('#DateOfBirth').attr('placeholder',response.DateOfBirth);
@@ -120,9 +120,9 @@
             },
             NID: "required",
             DateOfBirth: "required",
-            nid_upload: "required",
+            // nid_upload: "required",
             Gender: "required",
-            agree: "required",
+            // agree: "required",
           }
         });
         $('#DateOfBirth').datepicker({

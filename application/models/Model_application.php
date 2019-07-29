@@ -46,6 +46,8 @@ class Model_application extends CI_Model
 		
 		unset($member['id']);
 		unset($member['updated_at']);
+		unset($member['decline_by']);
+		unset($member['comment']);
 		$member['is_approved'] = 1;
 		$member['approved_by'] = $this->session->userdata('id');
 
@@ -63,7 +65,7 @@ class Model_application extends CI_Model
 	}
 
 	// public function edit($data, $id)
-	// {
+	// {ALTER TABLE `temp_members` ADD `decline_by` INT(10) NULL AFTER `approved_by`, ADD `comment` TEXT NULL AFTER `decline_by`;
 	// 	$this->db->where('id', $id);
 	// 	$update = $this->db->update('groups', $data);
 	// 	return ($update == true) ? true : false;	

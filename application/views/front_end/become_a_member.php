@@ -21,6 +21,7 @@
                         <div class="col-sm-9">
                             <h3 class="membership">Membership Form</h3>
                             <h5>(only valid member can apply)</h5>
+                           
                         </div>
                         <div class="col-sm-3">
                             <!-- <div class="picture-box border border-success">Upload your picture</div> -->
@@ -78,7 +79,7 @@
                         </div>
                         <label for="CadetNo" class="col-sm-2 col-form-label"><span id="CadetNoLabel"></span></label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" name="CadetNo" id="CadetNo" placeholder=""  value ="<?php echo (set_value('CadetNo')) ? set_value('CadetNo') : "" ;?>">
+                            <input type="text" class="form-control" name="CadetNo" id="CadetNo" placeholder=""  value ="<?php echo $this->session->userdata('cadetNO');?>" readonly>
                             <span class="text-danger"><?php echo form_error('CadetNo'); ?></span>
                         </div>
                     </div>

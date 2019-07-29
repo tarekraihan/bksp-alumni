@@ -14,7 +14,7 @@
             <a class="nav-link" href="<?php echo base_url('about-us.html');?>">About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('become-a-member.html');?>">Become Member</a>
+            <a class="nav-link" href="<?php echo base_url('cadet-no.html');?>">Become Member</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Blog</a>

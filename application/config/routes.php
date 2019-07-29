@@ -52,6 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'En';
 $route['about-us'] = "en/about_us";
 $route['become-a-member'] = "en/become_a_member";
+$route['cadet-no'] = "en/cadet_no";
 $route['contact'] = "en/contact";
 $route['backdoor'] = "auth/login";
 $route['404_override'] = '';
