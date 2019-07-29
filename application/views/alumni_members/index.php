@@ -44,15 +44,17 @@
             <table id="manageTable" class="table table-bordered table-striped">
               <thead>
               <tr>
+                <th>Member No</th>
                 <th>Image</th>
                 <th>Applicant Name</th>
                 <th>BKSP Admission Year</th>
                 <th>Cadet No</th>
                 <th>Year of SSC</th>
                 <th>Mobile No</th>
-                <!-- <?php //if(in_array('updateMember', $user_permission) || in_array('deleteMember', $user_permission)): ?>
+                <th>Member At</th>
+                <?php if(in_array('viewMember', $user_permission) ): ?>
                   <th>Action</th>
-                <?php// endif; ?> -->
+                <?php endif; ?>
               </tr>
               </thead>
 

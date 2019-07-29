@@ -15,7 +15,7 @@ class Model_application extends CI_Model
 			return $query->row_array();
 		}
 
-		$sql = "SELECT * FROM temp_members WHERE is_deleted = ?";
+		$sql = "SELECT * FROM temp_members WHERE is_deleted = ? ORDER BY id DESC";
 		$query = $this->db->query($sql, array(0));
 		return $query->result_array();
 	}
@@ -23,12 +23,12 @@ class Model_application extends CI_Model
 	public function getMemberData($Id= null) 
 	{
 		if($Id) {
-			$sql = "SELECT * FROM members WHERE id = ?";
+			$sql = "SELECT * FROM members WHERE id = ? ";
 			$query = $this->db->query($sql, array($Id));
 			return $query->row_array();
 		}
 
-		$sql = "SELECT * FROM members WHERE is_deleted = ?";
+		$sql = "SELECT * FROM members WHERE is_deleted = ?  ORDER BY id DESC";
 		$query = $this->db->query($sql, array(0));
 		return $query->result_array();
 	}
@@ -76,5 +76,21 @@ class Model_application extends CI_Model
 	// 	$this->db->where('id', $id);
 	// 	$delete = $this->db->delete('groups');
 	// 	return ($delete == true) ? true : false;
-	// }
+	// }\
+
+	public function countTotalApplication()
+	{
+		$sql = "SELECT * FROM temp_members WHERE is_deleted = ?";
+		$query = $this->db->query($sql,array(0));
+		return $query->num_rows();
+	}
+	
+
+	public function countTotalMember()
+	{
+		$sql = "SELECT * FROM members";
+		$query = $this->db->query($sql);
+		return $query->num_rows();
+	}
+	
 }

@@ -91,6 +91,11 @@
               $('#DateOfBirthLabel').text(response.DateOfBirthLabel);
               $('#GenderLabel').text(response.GenderLabel);
               $('#DateOfBirth').attr('placeholder',response.DateOfBirth);
+              $('#DegreeYearOfAdmissionLabel').text(response.DegreeYearOfAdmissionLabel);
+              $('#YearOfAdmission').attr('placeholder',response.YearOfAdmission);
+              $('#YearOfPassLabel').text(response.YearOfPassLabel);
+              $('#YearOfPass').attr('placeholder',response.YearOfPass);
+              $('#onlyForDegreeLabel').text(response.onlyForDegreeLabel);
             }
           });
         }).trigger('change');
@@ -110,6 +115,8 @@
             CadetNo: "required",
             YearOfSSC: "required",
             YearOfHSC: "required",
+            YearOfAdmission: "required",
+            YearOfPass: "required",
             Address: "required",
             BloodGroup: "required",
             Religion: "required",
@@ -126,7 +133,7 @@
           }
         });
         $('#DateOfBirth').datepicker({
-				format: 'dd-mm-yyyy'
+				format: 'yyyy-mm-dd'
 			});
       });
 

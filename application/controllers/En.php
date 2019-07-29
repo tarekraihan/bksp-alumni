@@ -32,6 +32,8 @@ class En extends FrontEnd_Controller
 		$this->form_validation->set_rules('CadetNo', 'CadetNo', 'trim|required');
 		$this->form_validation->set_rules('YearOfSSC', 'YearOfSSC', 'trim|required');
 		$this->form_validation->set_rules('YearOfHSC', 'YearOfHSC', 'trim|required');
+		$this->form_validation->set_rules('YearOfAdmission', 'Year Of Admission', 'trim|required');
+		$this->form_validation->set_rules('YearOfPass', 'Year Of Pass', 'trim|required');
 		$this->form_validation->set_rules('Address', 'Address', 'trim|required');
 		$this->form_validation->set_rules('BloodGroup', 'BloodGroup', 'trim|required');
 		$this->form_validation->set_rules('Religion', 'Religion', 'trim|required');
@@ -42,9 +44,10 @@ class En extends FrontEnd_Controller
 		$this->form_validation->set_rules('ProfessinalInformation', 'ProfessinalInformation', 'trim');
 		$this->form_validation->set_rules('NID', 'NID', 'trim|required');
 		$this->form_validation->set_rules('DateOfBirth', 'DateOfBirth', 'trim|required');
-		$this->form_validation->set_rules('agree', 'Disclaimer', 'required');
+		// $this->form_validation->set_rules('agree', 'Disclaimer', 'required');
 		$this->form_validation->set_rules('Gender', 'Gender', 'required');
 		if ($this->form_validation->run() == TRUE) {
+           
             // true case
         	$upload_image = $this->upload_image();
         	// $upload_nid = $this->upload_nid();
@@ -60,6 +63,8 @@ class En extends FrontEnd_Controller
                 'cadet_no' => $this->input->post('CadetNo'),                
                 'year_of_ssc' => date('Y',strtotime($this->input->post('YearOfSSC'))),
                 'year_of_hsc' => date('Y',strtotime($this->input->post('YearOfHSC'))),
+                'degree_cadet_admission_year' => date('Y',strtotime($this->input->post('YearOfAdmission'))),
+                'degree_cadet_passing_year' => date('Y',strtotime($this->input->post('YearOfPass'))),
                 'address' => $this->input->post('Address'),
                 'blood_group' => $this->input->post('BloodGroup'),
                 'religious' => $this->input->post('Religion'),
@@ -92,7 +97,7 @@ class En extends FrontEnd_Controller
                 // $this->email->subject('Application in Alumni Association of BKSP');
                 // $this->email->message($message);
                 // $this->email->send();
-                $this->session->sess_destroy();
+                $this->session->unset_userdata('cadetNo');
         		$this->session->set_flashdata('success', 'Successfully appplied');
         		redirect('cadet-no', 'refresh');
         	}
@@ -154,7 +159,12 @@ class En extends FrontEnd_Controller
                     "DateOfBirthLabel" => "Date of Birth",
                     "DateOfBirth" => "Date of Birth",
                     // "nid_uploadLabel" => "Upload NID",
-                    "GenderLabel" => "Gender"
+                    "GenderLabel" => "Gender",
+                    "DegreeYearOfAdmissionLabel" => "Year of Admission",
+                    "YearOfAdmission" => "Year of Admission",
+                    "YearOfPassLabel" => "Year of Pass",
+                    "YearOfPass" => "Year of Pass",
+                    "onlyForDegreeLabel" => "Only for degree Cadet",
                 ],
                 "BN" => [
                     "NameLabel" => "নাম",
@@ -194,7 +204,12 @@ class En extends FrontEnd_Controller
                     "DateOfBirthLabel" => "জন্ম তারিখ",
                     "DateOfBirth" => "জন্ম তারিখ",
                     // "nid_uploadLabel" => "জাতীয় পরিচয় পত্র",
-                    "GenderLabel" => "লিঙ্গ"
+                    "GenderLabel" => "লিঙ্গ",
+                    "DegreeYearOfAdmissionLabel" => "ভর্তির সাল",
+                    "YearOfAdmission" => "ভর্তির সাল",
+                    "YearOfPassLabel" => "পরীক্ষোত্তীর্ণ হত্তয়ার সাল",
+                    "YearOfPass" => "পরীক্ষোত্তীর্ণ হত্তয়ার সাল",
+                    "onlyForDegreeLabel" => "কেবল ডিগ্রি ক্যাডেটের জন্য",
                 ]
             ];
 
@@ -259,7 +274,7 @@ class En extends FrontEnd_Controller
 
     
     public function cadet_no(){
-        $this->logged_in();
+        
         $this->data['page_title'] = 'Become a Member';
 
 		$this->form_validation->set_rules('CadetNo', 'CadetNo', 'trim|required');
@@ -270,7 +285,7 @@ class En extends FrontEnd_Controller
             $category = trim(strtoupper($devided[0]));
 
             if (in_array($category, $categories)){
-                $this->session->set_userdata('cadetNO',$cadetNo);
+                $this->session->set_userdata('cadetNo',$cadetNo);
                 redirect('become-a-member', 'refresh');
             }else{
                 $this->session->set_flashdata('error', 'Invalid Cadet No !');

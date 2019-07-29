@@ -76,16 +76,14 @@ class FrontEnd_Controller extends MY_Controller
 
 	public function logged_in()
 	{
-		$session_data = $this->session->userdata();
-		if(isset($session_data['cadetNO'])) {
+		if($this->session->userdata('cadetNo')) {
 			redirect('become-a-member', 'refresh');
 		}
 	}
 
 	public function not_logged_in()
 	{
-		$session_data = $this->session->userdata();
-		if(!isset($session_data['cadetNO'])) {
+		if(!$this->session->userdata('cadetNo')) {
 			redirect('cadet-no', 'refresh');
 		}
 	}

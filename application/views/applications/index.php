@@ -44,13 +44,13 @@
             <table id="manageTable" class="table table-bordered table-striped">
               <thead>
               <tr>
-                <th>Image</th>
-                
+                <th>Member Image</th>
                 <th>Applicant Name</th>
                 <th>BKSP Admission Year</th>
                 <th>Cadet No</th>
                 <th>Year of SSC</th>
                 <th>Mobile No</th>
+                <th>Applied At</th>
                 <?php if(in_array('approveApplication', $user_permission) || in_array('deleteApplication', $user_permission)): ?>
                   <th>Action</th>
                 <?php endif; ?>
