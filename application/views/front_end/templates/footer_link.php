@@ -3,6 +3,7 @@
     <script src="<?php echo base_url('assets/front_end/js/jquery-3.4.1.min.js');?>" ></script>
     <script src="<?php echo base_url('assets/front_end/js/popper.min.js');?>"></script>
     <script src="<?php echo base_url('assets/front_end/js/bootstrap.min.js');?>" ></script>
+    <script src="<?php echo base_url('assets/front_end/js/jssor.slider-27.5.0.min.js');?>" ></script>
     <script src="<?php echo base_url('assets/plugins/fileinput/fileinput.min.js') ?>"></script>
     <script src="<?php echo base_url('assets/plugins/jquery-validator/jquery.validate.js') ?>"></script>
 	  <script src="<?php echo base_url('assets/plugins/jquery-validator/additional-methods.js') ?>"></script>

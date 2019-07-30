@@ -7,13 +7,13 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="<?php echo base_url('assets/front_end/images/bksp_image.jpg');?>" class="d-block w-100" alt="BKSP Image">
+      <img src="<?php echo base_url('assets/front_end/images/banner_slider1.jpg');?>" class="d-block w-100" alt="BKSP Image">
     </div>
     <div class="carousel-item">
-      <img src="<?php echo base_url('assets/front_end/images/cricket.jpg');?>" class="d-block w-100" alt="...">
+      <img src="<?php echo base_url('assets/front_end/images/banner_slider2.jpg');?>" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="<?php echo base_url('assets/front_end/images/football_star.jpg');?>" class="d-block w-100" alt="...">
+      <img src="<?php echo base_url('assets/front_end/images/banner_slider3.jpg');?>" class="d-block w-100" alt="...">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -36,9 +36,9 @@
                     <h2 class="card-title">About AAB</h2>
                     <p class="card-text">
                       Welcome to the Alumni Association of Bksp !
-                      We're here to connect Bksp alumni or ex-students from all around Bangladesh and keep you 
-                      informed about the news, & events held in and around you; our alumni live all over the country
-                      and are involved in all sorts of professions and businesses, but the one thing they all...
+                      We're here to connect BKSP alumni or ex-students from all around Bangladesh and keep you informed 
+                      about the news, & events held in and around you; our alumni live all over the country and are involved
+                      in all sorts of professions and businesses, but the one thing they all...
                     </p>
                   </a>
                 </div>
@@ -86,9 +86,9 @@
                       <h2 class="card-title">Featured Post</h2>
                       <p class="card-text">
                         Welcome to the Alumni Association of Bksp !
-                        We're here to connect Bksp alumni or ex-students from all around Bangladesh and keep you 
-                        informed about the news, & events held in and around you; our alumni live all over the country
-                        and are involved in all sorts of professions and businesses, but the one thing they all...
+                        We're here to connect BKSP alumni or ex-students from all around Bangladesh and keep you informed 
+                        about the news, & events held in and around you; our alumni live all over the country and are involved
+                        in all sorts of professions and businesses, but the one thing they all...
                       </p>
                     </a>
                   </div>
@@ -115,73 +115,73 @@
 		<div class="row games_hilights">
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
                 <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" 
-                   data-image="<?php echo base_url('assets/front_end/images/badminton.jpg');?>"
+                   data-image="<?php echo base_url('assets/front_end/images/IMG_0451.jpg');?>"
                    data-target="#image-gallery">
                     <img class="img-thumbnail"
-                         src="<?php echo base_url('assets/front_end/images/badminton.jpg');?>"
+                         src="<?php echo base_url('assets/front_end/images/IMG_0451.jpg');?>"
                          alt="badminton">
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
                 <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" 
-                   data-image="<?php echo base_url('assets/front_end/images/bolibol.jpg');?>"
+                   data-image="<?php echo base_url('assets/front_end/images/IMG_0381.jpeg');?>"
                    data-target="#image-gallery">
                     <img class="img-thumbnail"
-                         src="<?php echo base_url('assets/front_end/images/bolibol.jpg');?>"
+                         src="<?php echo base_url('assets/front_end/images/IMG_0381.jpeg');?>"
                          alt="bolibol">
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
                 <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" 
-                   data-image="<?php echo base_url('assets/front_end/images/basketball.jpg');?>"
+                   data-image="<?php echo base_url('assets/front_end/images/IMG_0340.jpeg');?>"
                    data-target="#image-gallery">
                     <img class="img-thumbnail"
-                         src="<?php echo base_url('assets/front_end/images/basketball.jpg');?>"
+                         src="<?php echo base_url('assets/front_end/images/IMG_0340.jpeg');?>"
                          alt="basketball">
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
                 <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" 
-                   data-image="<?php echo base_url('assets/front_end/images/badminton.jpg');?>"
+                   data-image="<?php echo base_url('assets/front_end/images/IMG_0305.jpeg');?>"
                    data-target="#image-gallery">
                     <img class="img-thumbnail"
-                         src="<?php echo base_url('assets/front_end/images/badminton.jpg');?>"
+                         src="<?php echo base_url('assets/front_end/images/IMG_0305.jpeg');?>"
                          alt="badminton">
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
                 <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" 
-                   data-image="<?php echo base_url('assets/front_end/images/bolibol.jpg');?>"
+                   data-image="<?php echo base_url('assets/front_end/images/IMG_0329.jpeg');?>"
                    data-target="#image-gallery">
                     <img class="img-thumbnail"
-                         src="<?php echo base_url('assets/front_end/images/bolibol.jpg');?>"
+                         src="<?php echo base_url('assets/front_end/images/IMG_0329.jpeg');?>"
                          alt="bolibol">
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
                 <a class="thumbnail" href="#" data-image-id="" data-toggle="modal"
-                   data-image="<?php echo base_url('assets/front_end/images/archery.jpg');?>"
+                   data-image="<?php echo base_url('assets/front_end/images/IMG_0294.jpeg');?>"
                    data-target="#image-gallery">
                     <img class="img-thumbnail"
-                         src="<?php echo base_url('assets/front_end/images/archery.jpg');?>"
+                         src="<?php echo base_url('assets/front_end/images/IMG_0294.jpeg');?>"
                          alt="archery">
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
                 <a class="thumbnail" href="#" data-image-id="" data-toggle="modal"
-                   data-image="<?php echo base_url('assets/front_end/images/basketball.jpg');?>"
+                   data-image="<?php echo base_url('assets/front_end/images/IMG_0290.jpeg');?>"
                    data-target="#image-gallery">
                     <img class="img-thumbnail"
-                         src="<?php echo base_url('assets/front_end/images/basketball.jpg');?>"
+                         src="<?php echo base_url('assets/front_end/images/IMG_0290.jpeg');?>"
                          alt="basketball">
                 </a>
             </div>
 			<div class="col-lg-3 col-md-4 col-xs-6 thumb">
                 <a class="thumbnail" href="#" data-image-id="" data-toggle="modal"
-                   data-image="<?php echo base_url('assets/front_end/images/archery.jpg');?>"
+                   data-image="<?php echo base_url('assets/front_end/images/IMG_0331.jpeg');?>"
                    data-target="#image-gallery">
                     <img class="img-thumbnail"
-                         src="<?php echo base_url('assets/front_end/images/archery.jpg');?>"
+                         src="<?php echo base_url('assets/front_end/images/IMG_0331.jpeg');?>"
                          alt="archery">
                 </a>
             </div>

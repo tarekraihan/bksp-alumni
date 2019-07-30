@@ -270,22 +270,35 @@ textarea{
 /*for footer*/
 .footer {
     background-color: #004720;
-    padding: 20px;
+    padding: 50px 18px;
     color: #fff;
 }
 .back_to_top a {
 	background: #ED1C24;
-	padding: 0 6px 6px 6px;
+	padding: 20px;
 	border-radius: 5px;
 	color: #fff;
 	text-decoration: none;
+}
+.back_to_top i{
+    font-size:30px;
+}
+.social_icon a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 38px;
 }
 /*for contact*/
 .contact_content {
     margin-top: 22px;
     line-height: 30px;
-    border: 1px solid #004720;
+    border: 1px solid #ddd;
     padding: 20px;
+}
+.gmap {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 22px 0;
 }
 
 #image-gallery .modal-footer{
