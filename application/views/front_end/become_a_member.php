@@ -80,7 +80,7 @@
                         </div>
                         <label for="CadetNo" class="col-sm-2 col-form-label"><span id="CadetNoLabel"></span></label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" name="CadetNo" id="CadetNo" placeholder=""  value ="<?php echo $this->session->userdata('cadetNO');?>" readonly>
+                            <input type="text" class="form-control" name="CadetNo" id="CadetNo" placeholder=""  value ="<?php echo $this->session->userdata('cadetNo');?>" readonly>
                             <span class="text-danger"><?php echo form_error('CadetNo'); ?></span>
                         </div>
                     </div>
