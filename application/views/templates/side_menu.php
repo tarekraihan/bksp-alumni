@@ -30,6 +30,9 @@
                 <?php if(in_array('approveApplication', $user_permission) || in_array('viewApplication', $user_permission) || in_array('deleteApplication', $user_permission)): ?>
                   <li><a href="<?php echo base_url('Controller_Applications') ?>"><i class="fa fa-circle-o"></i> Application List</a></li>
                 <?php endif; ?>
+                <?php if(in_array('approveApplication', $user_permission) || in_array('viewApplication', $user_permission)): ?>
+                  <li><a href="<?php echo base_url('Controller_Applications/decline_list') ?>"><i class="fa fa-circle-o"></i> Decline Application List</a></li>
+                <?php endif; ?>
               </ul>
             </li>
           <?php endif; ?>

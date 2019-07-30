@@ -17,14 +17,14 @@
                             <?php if($this->session->flashdata('success')): ?>
                                 <div class="alert alert-success alert-dismissible" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <?php echo $this->session->flashdata('success'); ?>
+                                <b><?php echo $this->session->flashdata('success'); ?></b>
                             </div>
                             <?php elseif($this->session->flashdata('error')): ?>
                                 <div class="alert alert-danger fade in alert-dismissible show">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true" style="font-size:20px">×</span>
                                     </button>
-                                    <?php echo $this->session->flashdata('error'); ?>
+                                    <b><?php echo $this->session->flashdata('error'); ?></b>
                                 </div>
                             <?php endif; ?>
                         </div>

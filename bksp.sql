@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 29, 2019 at 09:34 PM
+-- Generation Time: Jul 30, 2019 at 05:52 PM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.1
 
@@ -101,6 +101,7 @@ CREATE TABLE `members` (
   `gender` varchar(15) DEFAULT NULL,
   `is_approved` int(1) DEFAULT NULL,
   `is_deleted` int(1) DEFAULT NULL,
+  `is_decline` int(1) DEFAULT '0',
   `approved_by` int(10) DEFAULT NULL,
   `deleted_by` int(10) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
@@ -140,6 +141,7 @@ CREATE TABLE `temp_members` (
   `gender` varchar(50) DEFAULT NULL,
   `is_approved` int(1) DEFAULT NULL,
   `is_deleted` int(1) DEFAULT NULL,
+  `is_decline` tinyint(1) DEFAULT '0',
   `approved_by` int(10) DEFAULT NULL,
   `decline_by` int(10) DEFAULT NULL,
   `comment` text,
@@ -196,7 +198,8 @@ INSERT INTO `user_group` (`id`, `user_id`, `group_id`) VALUES
 (9, 8, 4),
 (10, 9, 5),
 (11, 10, 5),
-(12, 11, 7);
+(12, 11, 7),
+(13, 12, 6);
 
 --
 -- Indexes for dumped tables
@@ -270,13 +273,13 @@ ALTER TABLE `temp_members`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `user_group`
 --
 ALTER TABLE `user_group`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

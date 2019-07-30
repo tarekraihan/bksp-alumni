@@ -20,6 +20,14 @@ class Model_application extends CI_Model
 		return $query->result_array();
 	}
 
+	public function getDeclineApplicationData() 
+	{
+		
+		$sql = "SELECT * FROM temp_members WHERE is_decline = ? ORDER BY id DESC";
+		$query = $this->db->query($sql, array(1));
+		return $query->result_array();
+	}
+
 	public function getMemberData($Id= null) 
 	{
 		if($Id) {
@@ -28,8 +36,8 @@ class Model_application extends CI_Model
 			return $query->row_array();
 		}
 
-		$sql = "SELECT * FROM members WHERE is_deleted = ?  ORDER BY id DESC";
-		$query = $this->db->query($sql, array(0));
+		$sql = "SELECT * FROM members ORDER BY id DESC";
+		$query = $this->db->query($sql);
 		return $query->result_array();
 	}
 
@@ -48,6 +56,7 @@ class Model_application extends CI_Model
 		unset($member['updated_at']);
 		unset($member['decline_by']);
 		unset($member['comment']);
+		unset($member['is_decline']);
 		$member['is_approved'] = 1;
 		$member['approved_by'] = $this->session->userdata('id');
 
@@ -56,6 +65,7 @@ class Model_application extends CI_Model
 			$data = [
 				'is_deleted' => 1,
 				'is_approved' => 1,
+				'is_decline' => 0,
 				'approved_by' => $this->session->userdata('id')
 			];
 			$this->db->where('id', $id);
@@ -64,12 +74,12 @@ class Model_application extends CI_Model
 		return ($create == true) ? true : false;
 	}
 
-	// public function edit($data, $id)
-	// {ALTER TABLE `temp_members` ADD `decline_by` INT(10) NULL AFTER `approved_by`, ADD `comment` TEXT NULL AFTER `decline_by`;
-	// 	$this->db->where('id', $id);
-	// 	$update = $this->db->update('groups', $data);
-	// 	return ($update == true) ? true : false;	
-	// }
+	public function decline_application($data, $id)
+	{
+		$this->db->where('id', $id);
+		$update = $this->db->update('temp_members', $data);
+		return ($update == true) ? true : false;	
+	}
 
 	// public function delete($id)
 	// {

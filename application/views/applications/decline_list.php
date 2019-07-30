@@ -1,6 +1,3 @@
-
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>var $j = jQuery.noConflict(true);</script> -->
 <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
 
 <!-- Content Wrapper. Contains page content -->
@@ -8,7 +5,7 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Manage Applications
+      Decline Applications
 
     </h1>
     <ol class="breadcrumb">
@@ -41,7 +38,7 @@
          
           <!-- /.box-header -->
           <div class="box-body">
-            <table id="manageTable" class="table table-bordered table-striped">
+            <table id="declineList" class="table table-bordered table-striped">
               <thead>
               <tr>
                 <th>Member Image</th>
@@ -50,6 +47,7 @@
                 <th>Cadet No</th>
                 <th>Year of SSC</th>
                 <th>Mobile No</th>
+                <th>Decline Reason</th>
                 <th>Applied At</th>
                 <?php if(in_array('approveApplication', $user_permission) || in_array('deleteApplication', $user_permission)): ?>
                   <th>Action</th>
@@ -72,6 +70,7 @@
   <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
+
 
 <?php if(in_array('approveApplication', $user_permission)): ?>
 <!-- approve brand modal -->
@@ -100,34 +99,29 @@
 <?php endif; ?>
 
 <script type="text/javascript">
-var manageTable;
+var declineList;
 var base_url = "<?php echo base_url(); ?>";
 
 $(document).ready(function() {
-
-  $("#mainProductNav").addClass('active');
-
   // initialize the datatable 
-  manageTable = $('#manageTable').DataTable({
+  declineList = $('#declineList').DataTable({
     dom: 'Bfrtip',
         buttons: [
             'copy', 'csv', 'excel', 'print'
         ], 
-    'ajax': base_url + 'Controller_Applications/fetchApplicationData',
+    'ajax': base_url + 'Controller_Applications/fetchDeclineApplicationData',
     'order': []
   });
 
 });
+
 
 // approve functions 
 function approveFunc(id)
 {
   if(id) {
     $("#approveForm").on('submit', function() {
-
       var form = $(this);
-
-      // remove the text-danger
       $(".text-danger").remove();
      
       $.ajax({
@@ -136,17 +130,13 @@ function approveFunc(id)
         data: { id:id }, 
         dataType: 'json',
         success:function(response) {
-            console.log(response);
-          manageTable.ajax.reload(null, false); 
-
+            declineList.ajax.reload(null, false); 
             $("#approveModal").modal('hide');
 
         },
         error: function(error){
-          manageTable.ajax.reload(null, false); 
+            declineList.ajax.reload(null, false); 
           $("#approveModal").modal('hide');
-          console.log("Errror=====",error);
-          
         }
       }); 
 

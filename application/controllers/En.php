@@ -279,13 +279,15 @@ class En extends FrontEnd_Controller
 
 		$this->form_validation->set_rules('CadetNo', 'CadetNo', 'trim|required');
 		if ($this->form_validation->run() == TRUE) {
-           $categories = array("ATH", "AR", "BA", "BO", "C", "F", "GYM", "H", "JU", "KA", "SW", "SH", "T", "TT", "U", "TKD", "VO" );
+            $categories = array("ATH", "AR", "BA", "BO", "C", "F", "GYM", "H", "JU", "KA", "SW", "SH", "T", "TT", "U", "TKD", "VO" );
             $cadetNo = $this->input->post('CadetNo');
-            $devided = explode('-',$cadetNo);
-            $category = trim(strtoupper($devided[0]));
+            $cadetNum = preg_replace('/[^0-9]/i','',$cadetNo);
+            $cadetText = preg_replace('/[^a-z]/i','',$cadetNo);
+            $category = trim(strtoupper($cadetText));
 
             if (in_array($category, $categories)){
-                $this->session->set_userdata('cadetNo',$cadetNo);
+                $newCadetNo = $category.'-'.$cadetNum;
+                $this->session->set_userdata('cadetNo',$newCadetNo);
                 redirect('become-a-member', 'refresh');
             }else{
                 $this->session->set_flashdata('error', 'Invalid Cadet No !');
