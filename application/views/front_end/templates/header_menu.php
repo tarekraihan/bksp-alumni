@@ -21,6 +21,9 @@
             <a class="nav-link" href="#">Blog</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url('gallery.html');?>">Gallery</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url('contact.html');?>">Contact</a>
           </li>
         </ul>

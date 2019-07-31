@@ -35,7 +35,7 @@ class Controller_Applications extends Admin_Controller
 			// button
             $buttons = '';
             if(in_array('approveApplication', $this->permission)) {
-    			$buttons .= ' <button type="button" class="btn btn-success btn-sm" onclick="approveFunc('.$value['id'].')" data-toggle="modal" data-target="#approveModal"><i class="fa fa-pencil"></i></button>';
+    			$buttons .= ' <button type="button" class="btn btn-success btn-sm" onclick="approveFunc('.$value['id'].')" data-toggle="modal" data-target="#approveModal"><i class="fa fa-check"></i></button>';
 			}
 			
 			if(in_array('viewApplication', $this->permission)){
@@ -43,7 +43,11 @@ class Controller_Applications extends Admin_Controller
 			}
 
             if(in_array('deleteApplication', $this->permission)) { 
-    			$buttons .= ' <a href="'.base_url('Controller_Applications/decline/'.$value['id']).'" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>';
+    			$buttons .= ' <a href="'.base_url('Controller_Applications/decline/'.$value['id']).'" class="btn btn-danger btn-sm"><i class="fa fa-times"></i></a>';
+            }
+
+			if(in_array('deleteApplication', $this->permission)) { 
+    			$buttons .= ' <a href="'.base_url('Controller_Applications/delete/'.$value['id']).'" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>';
             }
 
 			$img = '<img src="'.base_url($value['profile_picture']).'" alt="'.$value['name'].'" class="img-circle" width="50" height="50" />';
@@ -84,6 +88,36 @@ class Controller_Applications extends Admin_Controller
 				}else{
 					$this->session->set_flashdata('errors', 'Error occurred!!');
         			redirect('Controller_Applications/decline/'.$id, 'refresh');
+				}
+			}else{
+				$this->data['id']=$id;
+				$this->render_template('applications/decline', $this->data);	
+			}	
+		}else{
+			redirect('Controller_Applications','refresh');
+		}
+	}
+
+	public function delete($id = null)
+	{
+		if(!in_array('deleteApplication', $this->permission)) {
+			redirect('dashboard', 'refresh');
+		}
+
+		if($id) {
+			
+			if($this->input->post('confirm')){ 
+				$data = array(
+					'is_deleted' => 1,
+					'deleted_by' =>  $this->session->userdata('id')
+				);
+				$delete = $this->Model_application->delete_application($data,$id);
+				if($delete == true){
+					$this->session->set_flashdata('success', 'Successfully Deleted');
+        			redirect('Controller_Applications/delete/'.$id, 'refresh');
+				}else{
+					$this->session->set_flashdata('errors', 'Error occurred!!');
+        			redirect('Controller_Applications/delete/'.$id, 'refresh');
 				}
 			}else{
 				$this->data['id']=$id;
@@ -147,7 +181,7 @@ class Controller_Applications extends Admin_Controller
 			// button
             $buttons = '';
             if(in_array('approveApplication', $this->permission)) {
-    			$buttons .= ' <button type="button" class="btn btn-success btn-sm" onclick="approveFunc('.$value['id'].')" data-toggle="modal" data-target="#approveModal"><i class="fa fa-pencil"></i></button>';
+    			$buttons .= ' <button type="button" class="btn btn-success btn-sm" onclick="approveFunc('.$value['id'].')" data-toggle="modal" data-target="#approveModal"><i class="fa fa-check"></i></button>';
 			}
 			
 			if(in_array('viewApplication', $this->permission)){

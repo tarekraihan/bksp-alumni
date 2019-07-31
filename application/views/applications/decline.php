@@ -9,7 +9,7 @@
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li><a href="<?php echo base_url('Controller_Applications/') ?>">Application List</a></li>
-        <li class="active">Delete</li>
+        <li class="active">Decline</li>
       </ol>
     </section>
 
@@ -32,13 +32,14 @@
                     </div>
                 <?php endif; ?>
 
-                <h1>Do you really want to delete the application?</h1>
+                <h1>Do you really want to decline the application?</h1>
 
-                <form action="<?php echo base_url('Controller_Applications/delete/'.$id) ?>" method="post">
-                    
+                <form action="<?php echo base_url('Controller_Applications/decline/'.$id) ?>" method="post">
+                    <label for="comment" >Decline Reason </label>
+                    <textarea  class="form-control" id="comment" name="comment" rows="3"></textarea>
+                    <span class="text-danger"><?php echo form_error('comment'); ?></span>
                     <br/>
-                    <input type="hidden" name="confirm" value="confirm"/>
-                    <input type="submit" class="btn btn-primary"  value="Delete">
+                    <input type="submit" class="btn btn-primary" name="confirm" value="Confirm">
                     <a href="<?php echo base_url('Controller_Applications') ?>" class="btn btn-warning">Cancel</a>
                 </form>
 

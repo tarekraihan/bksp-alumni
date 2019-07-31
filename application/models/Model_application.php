@@ -15,8 +15,8 @@ class Model_application extends CI_Model
 			return $query->row_array();
 		}
 
-		$sql = "SELECT * FROM temp_members WHERE is_deleted = ? ORDER BY id DESC";
-		$query = $this->db->query($sql, array(0));
+		$sql = "SELECT * FROM temp_members WHERE is_deleted = ? AND is_decline = ? ORDER BY id DESC";
+		$query = $this->db->query($sql, array(0,0));
 		return $query->result_array();
 	}
 
@@ -37,6 +37,13 @@ class Model_application extends CI_Model
 		}
 
 		$sql = "SELECT * FROM members ORDER BY id DESC";
+		$query = $this->db->query($sql);
+		return $query->result_array();
+	}
+
+	public function getMemberDataForFrontEnd() 
+	{
+		$sql = "SELECT * FROM `temp_members` ORDER BY id DESC LIMIT 0,18";
 		$query = $this->db->query($sql);
 		return $query->result_array();
 	}
@@ -75,6 +82,13 @@ class Model_application extends CI_Model
 	}
 
 	public function decline_application($data, $id)
+	{
+		$this->db->where('id', $id);
+		$update = $this->db->update('temp_members', $data);
+		return ($update == true) ? true : false;	
+	}
+
+	public function delete_application($data, $id)
 	{
 		$this->db->where('id', $id);
 		$update = $this->db->update('temp_members', $data);

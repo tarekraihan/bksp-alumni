@@ -54,6 +54,7 @@ $route['about-us'] = "en/about_us";
 $route['become-a-member'] = "en/become_a_member";
 $route['cadet-no'] = "en/cadet_no";
 $route['contact'] = "en/contact";
+$route['gallery'] = "en/gallery";
 $route['backdoor'] = "auth/login";
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

@@ -10,6 +10,7 @@ class En extends FrontEnd_Controller
 
     public function index(){
         $this->data['page_title'] = 'BKSP HOME';
+        $this->data['members'] =  $this->Model_application->getMemberDataForFrontEnd();
 
         $this->render_template('front_end/home', $this->data);
     }
@@ -29,7 +30,8 @@ class En extends FrontEnd_Controller
 		$this->form_validation->set_rules('FatherName', 'Father Name', 'trim|required');
 		$this->form_validation->set_rules('MotherName', 'Mother Name', 'trim|required');
 		$this->form_validation->set_rules('BKSPAdmissionYear', 'BKSPAdmissionYear', 'trim|required');
-		$this->form_validation->set_rules('CadetNo', 'CadetNo', 'trim|required');
+		$this->form_validation->set_rules('CadetNo', 'Cadet No', 'trim|required');
+		// $this->form_validation->set_rules('CadetNo', 'Cadet No', 'is_unique[temp_members.cadet_no]', array('is_unique' => 'You already applied'));
 		$this->form_validation->set_rules('YearOfSSC', 'YearOfSSC', 'trim|required');
 		$this->form_validation->set_rules('YearOfHSC', 'YearOfHSC', 'trim|required');
 		$this->form_validation->set_rules('YearOfAdmission', 'Year Of Admission', 'trim|required');
@@ -41,10 +43,9 @@ class En extends FrontEnd_Controller
 		$this->form_validation->set_rules('Phone', 'Phone', 'trim');
 		$this->form_validation->set_rules('EmailAddress', 'EmailAddress', 'trim|required|valid_email');
 		$this->form_validation->set_rules('FacebookId', 'FacebookId', 'trim|valid_url');
-		$this->form_validation->set_rules('ProfessinalInformation', 'ProfessinalInformation', 'trim');
+		$this->form_validation->set_rules('ProfessinalInformation', 'ProfessinalInformation', 'trim|required');
 		$this->form_validation->set_rules('NID', 'NID', 'trim|required');
 		$this->form_validation->set_rules('DateOfBirth', 'DateOfBirth', 'trim|required');
-		// $this->form_validation->set_rules('agree', 'Disclaimer', 'required');
 		$this->form_validation->set_rules('Gender', 'Gender', 'required');
 		if ($this->form_validation->run() == TRUE) {
            
@@ -298,6 +299,13 @@ class En extends FrontEnd_Controller
 
             $this->render_template('front_end/cadet_no', $this->data);
         }
+    }
+
+    
+    public function gallery(){
+        $this->data['page_title'] = 'Gallery';
+
+        $this->render_template('front_end/gallery', $this->data);
     }
 
 
