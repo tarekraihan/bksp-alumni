@@ -217,24 +217,14 @@
     <div class="row">
           <div class="member_list">
               <h2>Members already registerd!</h2>
-              <img src="<?php echo base_url('assets/front_end/images/masrafi-mortuza.jpg');?>" alt="masrafi-mortuza" class="rounded-circle">
-              <img src="<?php echo base_url('assets/front_end/images/Shakib-Al-Hasan.jpg');?>" alt="Shakib-Al-Hasan" class="rounded-circle">
-              <img src="<?php echo base_url('assets/front_end/images/mushfiqur-rahim.jpg');?>" alt="mushfiqur-rahim" class="rounded-circle">
-              <img src="<?php echo base_url('assets/front_end/images/masrafi-mortuza.jpg');?>" alt="masrafi-mortuza" class="rounded-circle">
-              <img src="<?php echo base_url('assets/front_end/images/Shakib-Al-Hasan.jpg');?>" alt="Shakib-Al-Hasan" class="rounded-circle">
-              <img src="<?php echo base_url('assets/front_end/images/mushfiqur-rahim.jpg');?>" alt="mushfiqur-rahim" class="rounded-circle">
-              <img src="<?php echo base_url('assets/front_end/images/masrafi-mortuza.jpg');?>" alt="masrafi-mortuza" class="rounded-circle">
-              <img src="<?php echo base_url('assets/front_end/images/Shakib-Al-Hasan.jpg');?>" alt="Shakib-Al-Hasan" class="rounded-circle">
-              <img src="<?php echo base_url('assets/front_end/images/mushfiqur-rahim.jpg');?>" alt="mushfiqur-rahim" class="rounded-circle">
-              <img src="<?php echo base_url('assets/front_end/images/masrafi-mortuza.jpg');?>" alt="masrafi-mortuza" class="rounded-circle">
-              <img src="<?php echo base_url('assets/front_end/images/Shakib-Al-Hasan.jpg');?>" alt="Shakib-Al-Hasan" class="rounded-circle">
-              <img src="<?php echo base_url('assets/front_end/images/mushfiqur-rahim.jpg');?>" alt="mushfiqur-rahim" class="rounded-circle">
-              <img src="<?php echo base_url('assets/front_end/images/masrafi-mortuza.jpg');?>" alt="masrafi-mortuza" class="rounded-circle">
-              <img src="<?php echo base_url('assets/front_end/images/Shakib-Al-Hasan.jpg');?>" alt="Shakib-Al-Hasan" class="rounded-circle">
-              <img src="<?php echo base_url('assets/front_end/images/mushfiqur-rahim.jpg');?>" alt="mushfiqur-rahim" class="rounded-circle">
-              <img src="<?php echo base_url('assets/front_end/images/Shakib-Al-Hasan.jpg');?>" alt="Shakib-Al-Hasan" class="rounded-circle">
-              <img src="<?php echo base_url('assets/front_end/images/mushfiqur-rahim.jpg');?>" alt="mushfiqur-rahim" class="rounded-circle">
-              <img src="<?php echo base_url('assets/front_end/images/masrafi-mortuza.jpg');?>" alt="masrafi-mortuza" class="rounded-circle">
+              <?php 
+              foreach($members as $member){
+                ?>
+                <img src="<?php echo base_url($member['profile_picture']);?>" alt="<?php echo $member['name'];?>" title="<?php echo $member['name'];?>" class="rounded-circle">
+                <?php
+              }
+              ?>
+             
           </div>
           <button type="button" class="btn btn-outline-success reg_button"><a href="<?php echo base_url('become-a-member.html');?>">register now</a></button>
       </div>
