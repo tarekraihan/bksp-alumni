@@ -205,7 +205,7 @@
                         <div class="col-sm-12">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="agree" name="agree">
-                                <span class="text-danger"><?php echo form_error('agree'); ?></span>
+                                <span class="text-danger"><?php //echo form_error('agree'); ?></span>
                                 <label class="form-check-label" for="agree">
                                  <span id="disclaimer">আমি <span id="MemberName">...............</span> স্বজ্ঞানে, Alumni Association of BKSP এর সকল কাজে নিজে স্বেচ্ছায় নিয়োজিত রাখবো এবং গঠনতন্ত্রের সকল শর্ত মেনে চলব<span>
                                 </label>

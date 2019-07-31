@@ -43,7 +43,7 @@ class Model_application extends CI_Model
 
 	public function getMemberDataForFrontEnd() 
 	{
-		$sql = "SELECT * FROM `temp_members` ORDER BY id DESC LIMIT 0,18";
+		$sql = "SELECT * FROM `members` ORDER BY id DESC LIMIT 0,18";
 		$query = $this->db->query($sql);
 		return $query->result_array();
 	}
@@ -92,6 +92,20 @@ class Model_application extends CI_Model
 	{
 		$this->db->where('id', $id);
 		$update = $this->db->update('temp_members', $data);
+		return ($update == true) ? true : false;	
+	}
+
+	public function update_application($data, $id)
+	{
+		$this->db->where('id', $id);
+		$update = $this->db->update('temp_members', $data);
+		return ($update == true) ? true : false;	
+	}
+
+	public function update_member($data, $id)
+	{
+		$this->db->where('id', $id);
+		$update = $this->db->update('members', $data);
 		return ($update == true) ? true : false;	
 	}
 
