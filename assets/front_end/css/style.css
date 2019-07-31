@@ -263,7 +263,6 @@ textarea{
 /*about us*/
 .about_us img{
     width: 100%;
-    
 }
 .about_content{
     text-align:justify;
@@ -321,4 +320,18 @@ textarea{
 }
 .reg_button:hover a {
     color: #fff !important;
+}
+/*for gallery*/
+.btn_gallery{
+    margin-top: 20px;
+}
+.btn_gallery a {
+    color: red;
+    text-decoration: none;
+}
+.btn_gallery:hover a {
+    color: #fff;
+}
+.gallery_head img{
+    width: 100%;
 }
