@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+    <link rel="icon" href="<?php echo base_url('assets/front_end/images/favicon.png');?>" type="image/png" sizes="180x180">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?php echo base_url('assets/front_end/css/mediaquires.css');?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/front_end/css/bootstrap.min.css');?>">

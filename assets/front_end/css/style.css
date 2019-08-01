@@ -70,6 +70,7 @@ body{
 .bksp_form_inner{
     background: #fff;
     padding:10px;
+    min-height: 400px;
 }
 .bksp_form input,textarea::placeholder{
     font-size:14px;
@@ -188,7 +189,7 @@ textarea{
     display: inline-block;
     font-family: Arial;
     font-size: 20px;
-    padding: 15px 10px;
+    padding: 30px 10px;
     text-align: center;
     text-decoration: none;
     width: 100%;
@@ -262,7 +263,6 @@ textarea{
 /*about us*/
 .about_us img{
     width: 100%;
-    
 }
 .about_content{
     text-align:justify;
@@ -320,4 +320,18 @@ textarea{
 }
 .reg_button:hover a {
     color: #fff !important;
+}
+/*for gallery*/
+.btn_gallery{
+    margin-top: 20px;
+}
+.btn_gallery a {
+    color: red;
+    text-decoration: none;
+}
+.btn_gallery:hover a {
+    color: #fff;
+}
+.gallery_head img{
+    width: 100%;
 }
