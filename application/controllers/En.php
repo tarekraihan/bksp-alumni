@@ -29,13 +29,13 @@ class En extends FrontEnd_Controller
 		$this->form_validation->set_rules('SpouseName', 'SpouseName', 'trim');
 		$this->form_validation->set_rules('FatherName', 'Father Name', 'trim|required');
 		$this->form_validation->set_rules('MotherName', 'Mother Name', 'trim|required');
-		$this->form_validation->set_rules('BKSPAdmissionYear', 'BKSPAdmissionYear', 'trim|required');
+		// $this->form_validation->set_rules('BKSPAdmissionYear', 'BKSPAdmissionYear', 'trim|required');
 		$this->form_validation->set_rules('CadetNo', 'Cadet No', 'trim|required');
-		// $this->form_validation->set_rules('CadetNo', 'Cadet No', 'is_unique[temp_members.cadet_no]', array('is_unique' => 'You already applied'));
+		$this->form_validation->set_rules('CadetNo', 'Cadet No', 'is_unique[temp_members.cadet_no]', array('is_unique' => 'You already applied'));
 		$this->form_validation->set_rules('YearOfSSC', 'YearOfSSC', 'trim|required');
 		$this->form_validation->set_rules('YearOfHSC', 'YearOfHSC', 'trim|required');
-		$this->form_validation->set_rules('YearOfAdmission', 'Year Of Admission', 'trim|required');
-		$this->form_validation->set_rules('YearOfPass', 'Year Of Pass', 'trim|required');
+		// $this->form_validation->set_rules('YearOfAdmission', 'Year Of Admission', 'trim|required');
+		// $this->form_validation->set_rules('YearOfPass', 'Year Of Pass', 'trim|required');
 		$this->form_validation->set_rules('Address', 'Address', 'trim|required');
 		$this->form_validation->set_rules('BloodGroup', 'BloodGroup', 'trim|required');
 		$this->form_validation->set_rules('Religion', 'Religion', 'trim|required');
@@ -277,8 +277,8 @@ class En extends FrontEnd_Controller
     public function cadet_no(){
         
         $this->data['page_title'] = 'Become a Member';
-
-		$this->form_validation->set_rules('CadetNo', 'CadetNo', 'trim|required');
+        $this->form_validation->set_rules('CadetNo', 'Cadet No', 'trim|required');
+        
 		if ($this->form_validation->run() == TRUE) {
             $categories = array("ATH", "AR", "BA", "BO", "C", "F", "GYM", "H", "JU", "KA", "SW", "SH", "T", "TT", "U", "TKD", "VO" );
             $cadetNo = $this->input->post('CadetNo');

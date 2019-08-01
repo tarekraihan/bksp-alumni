@@ -37,16 +37,16 @@ class Members extends Admin_Controller
 			// button
            $buttons = '';
             if(in_array('approveApplication', $this->permission)) {
-    			$buttons .= '<a href="'.base_url('Members/edit/'.$value['id']).'" class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i></a>';
+    			$buttons .= '<a href="'.base_url('Members/edit/'.$value['id']).'" title="Edit" class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i></a>';
             }
 
-            // if(in_array('deleteApplication', $this->permission)) { 
-    		// 	$buttons .= ' <button type="button" class="btn btn-danger btn-sm" onclick="removeFunc('.$value['id'].')" data-toggle="modal" data-target="#removeModal"><i class="fa fa-trash"></i></button>';
-			// }
 			if(in_array('viewMember', $this->permission)){
-				$buttons .= ' <a href="'.base_url('Members/view/'.$value['id']).'" class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a>';
+				$buttons .= ' <a href="'.base_url('Members/view/'.$value['id']).'" title="View" class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a>';
 			}
 
+            if(in_array('deleteMember', $this->permission)) { 
+    			$buttons .= ' <a href="'.base_url('Members/delete/'.$value['id']).'" title="Decline" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>';
+            }
 
 			$img = '<img src="'.base_url($value['profile_picture']).'" alt="'.$value['name'].'" class="img-circle" width="50" height="50" />';
 
@@ -88,13 +88,13 @@ class Members extends Admin_Controller
 			$this->form_validation->set_rules('SpouseName', 'SpouseName', 'trim');
 			$this->form_validation->set_rules('FatherName', 'Father Name', 'trim|required');
 			$this->form_validation->set_rules('MotherName', 'Mother Name', 'trim|required');
-			$this->form_validation->set_rules('BKSPAdmissionYear', 'BKSPAdmissionYear', 'trim|required');
+			// $this->form_validation->set_rules('BKSPAdmissionYear', 'BKSPAdmissionYear', 'trim|required');
 			$this->form_validation->set_rules('CadetNo', 'Cadet No', 'trim|required');
 			// $this->form_validation->set_rules('CadetNo', 'Cadet No', 'is_unique[temp_members.cadet_no]', array('is_unique' => 'You already applied'));
 			$this->form_validation->set_rules('YearOfSSC', 'YearOfSSC', 'trim|required');
 			$this->form_validation->set_rules('YearOfHSC', 'YearOfHSC', 'trim|required');
-			$this->form_validation->set_rules('YearOfAdmission', 'Year Of Admission', 'trim|required');
-			$this->form_validation->set_rules('YearOfPass', 'Year Of Pass', 'trim|required');
+			// $this->form_validation->set_rules('YearOfAdmission', 'Year Of Admission', 'trim|required');
+			// $this->form_validation->set_rules('YearOfPass', 'Year Of Pass', 'trim|required');
 			$this->form_validation->set_rules('Address', 'Address', 'trim|required');
 			$this->form_validation->set_rules('BloodGroup', 'BloodGroup', 'trim|required');
 			$this->form_validation->set_rules('Religion', 'Religion', 'trim|required');
@@ -190,6 +190,37 @@ class Members extends Admin_Controller
             $path = $config['upload_path'].'/'.$config['file_name'].'.'.$type;
             return ($data == true) ? $path : false;            
         }
-    }
+	}
+	
+	
+	public function delete($id = null)
+	{
+		if(!in_array('deleteMember', $this->permission)) {
+			redirect('dashboard', 'refresh');
+		}
+
+		if($id) {
+			
+			if($this->input->post('confirm')){ 
+				$data = array(
+					'is_deleted' => 1,
+					'deleted_by' =>  $this->session->userdata('id')
+				);
+				$delete = $this->Model_application->delete_member($data,$id);
+				if($delete == true){
+					$this->session->set_flashdata('success', 'Successfully Deleted');
+        			redirect('Members/delete/'.$id, 'refresh');
+				}else{
+					$this->session->set_flashdata('errors', 'Error occurred!!');
+        			redirect('Members/delete/'.$id, 'refresh');
+				}
+			}else{
+				$this->data['id']=$id;
+				$this->render_template('alumni_members/delete', $this->data);	
+			}	
+		}else{
+			redirect('Members','refresh');
+		}
+	}
 
 }

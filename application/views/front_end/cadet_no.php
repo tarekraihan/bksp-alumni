@@ -11,7 +11,9 @@
                         <h1>Alumni Association of BKSP</h1>
                     </div>
                 </div>
+
                 <form class="bksp_member_form" id="cadet_no_form" method="post" action="<?php base_url('en/cadet_no') ?>" >
+                    <div class="form-group row"><h3>( Please use your cadet number as you use in formally. )</h3></div>
                     <div class="form-group row">
                         <div class="col-sm-6 offset-md-3">
                             <?php if($this->session->flashdata('success')): ?>

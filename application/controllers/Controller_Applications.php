@@ -31,23 +31,23 @@ class Controller_Applications extends Admin_Controller
 			// button
             $buttons = '';
             if(in_array('approveApplication', $this->permission)) {
-    			$buttons .= ' <button type="button" class="btn btn-success btn-sm" onclick="approveFunc('.$value['id'].')" data-toggle="modal" data-target="#approveModal"><i class="fa fa-check"></i></button>';
+    			$buttons .= ' <button type="button" class="btn btn-success btn-sm" title="Approve" onclick="approveFunc('.$value['id'].')" data-toggle="modal" data-target="#approveModal"><i class="fa fa-check"></i></button>';
 			}
 			
 			if(in_array('viewApplication', $this->permission)){
-				$buttons .= ' <a href="'.base_url('Controller_Applications/view/'.$value['id']).'" class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a>';
+				$buttons .= ' <a href="'.base_url('Controller_Applications/view/'.$value['id']).'"  title="View Details" class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a>';
 			}
 			if(in_array('approveApplication', $this->permission)){
-				$buttons .= ' <a href="'.base_url('Controller_Applications/edit/'.$value['id']).'" class="btn btn-success btn-sm"><i class="fa fa-pencil"></i></a>';
+				$buttons .= ' <a href="'.base_url('Controller_Applications/edit/'.$value['id']).'" title="Edit" class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i></a>';
 			}
 
 
             if(in_array('deleteApplication', $this->permission)) { 
-    			$buttons .= ' <a href="'.base_url('Controller_Applications/decline/'.$value['id']).'" class="btn btn-danger btn-sm"><i class="fa fa-times"></i></a>';
+    			$buttons .= ' <a href="'.base_url('Controller_Applications/decline/'.$value['id']).'" title="Decline" class="btn btn-danger btn-sm"><i class="fa fa-times"></i></a>';
             }
 
 			if(in_array('deleteApplication', $this->permission)) { 
-    			$buttons .= ' <a href="'.base_url('Controller_Applications/delete/'.$value['id']).'" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>';
+    			$buttons .= ' <a href="'.base_url('Controller_Applications/delete/'.$value['id']).'" title="Delete" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>';
             }
 
 			$img = '<img src="'.base_url($value['profile_picture']).'" alt="'.$value['name'].'" class="img-circle" width="50" height="50" />';
@@ -181,11 +181,11 @@ class Controller_Applications extends Admin_Controller
 			// button
             $buttons = '';
             if(in_array('approveApplication', $this->permission)) {
-    			$buttons .= ' <button type="button" class="btn btn-success btn-sm" onclick="approveFunc('.$value['id'].')" data-toggle="modal" data-target="#approveModal"><i class="fa fa-check"></i></button>';
+    			$buttons .= ' <button type="button" class="btn btn-success btn-sm" title="Approve" onclick="approveFunc('.$value['id'].')" data-toggle="modal" data-target="#approveModal"><i class="fa fa-check"></i></button>';
 			}
 			
 			if(in_array('viewApplication', $this->permission)){
-				$buttons .= ' <a href="'.base_url('Controller_Applications/view/'.$value['id']).'" class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a>';
+				$buttons .= ' <a href="'.base_url('Controller_Applications/view/'.$value['id']).'" title="View Details" class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a>';
 			}
 
             // if(in_array('deleteApplication', $this->permission)) { 
@@ -217,13 +217,13 @@ class Controller_Applications extends Admin_Controller
 			$this->form_validation->set_rules('SpouseName', 'SpouseName', 'trim');
 			$this->form_validation->set_rules('FatherName', 'Father Name', 'trim|required');
 			$this->form_validation->set_rules('MotherName', 'Mother Name', 'trim|required');
-			$this->form_validation->set_rules('BKSPAdmissionYear', 'BKSPAdmissionYear', 'trim|required');
+			// $this->form_validation->set_rules('BKSPAdmissionYear', 'BKSPAdmissionYear', 'trim|required');
 			$this->form_validation->set_rules('CadetNo', 'Cadet No', 'trim|required');
 			// $this->form_validation->set_rules('CadetNo', 'Cadet No', 'is_unique[temp_members.cadet_no]', array('is_unique' => 'You already applied'));
 			$this->form_validation->set_rules('YearOfSSC', 'YearOfSSC', 'trim|required');
 			$this->form_validation->set_rules('YearOfHSC', 'YearOfHSC', 'trim|required');
-			$this->form_validation->set_rules('YearOfAdmission', 'Year Of Admission', 'trim|required');
-			$this->form_validation->set_rules('YearOfPass', 'Year Of Pass', 'trim|required');
+			// $this->form_validation->set_rules('YearOfAdmission', 'Year Of Admission', 'trim|required');
+			// $this->form_validation->set_rules('YearOfPass', 'Year Of Pass', 'trim|required');
 			$this->form_validation->set_rules('Address', 'Address', 'trim|required');
 			$this->form_validation->set_rules('BloodGroup', 'BloodGroup', 'trim|required');
 			$this->form_validation->set_rules('Religion', 'Religion', 'trim|required');
