@@ -91,8 +91,8 @@ class Members extends Admin_Controller
 			// $this->form_validation->set_rules('BKSPAdmissionYear', 'BKSPAdmissionYear', 'trim|required');
 			$this->form_validation->set_rules('CadetNo', 'Cadet No', 'trim|required');
 			// $this->form_validation->set_rules('CadetNo', 'Cadet No', 'is_unique[temp_members.cadet_no]', array('is_unique' => 'You already applied'));
-			$this->form_validation->set_rules('YearOfSSC', 'YearOfSSC', 'trim|required');
-			$this->form_validation->set_rules('YearOfHSC', 'YearOfHSC', 'trim|required');
+			$this->form_validation->set_rules('YearOfSSC', 'YearOfSSC', 'trim');
+			$this->form_validation->set_rules('YearOfHSC', 'YearOfHSC', 'trim');
 			// $this->form_validation->set_rules('YearOfAdmission', 'Year Of Admission', 'trim|required');
 			// $this->form_validation->set_rules('YearOfPass', 'Year Of Pass', 'trim|required');
 			$this->form_validation->set_rules('Address', 'Address', 'trim|required');
@@ -101,7 +101,7 @@ class Members extends Admin_Controller
 			$this->form_validation->set_rules('Mobile', 'Mobile', 'trim|required');
 			$this->form_validation->set_rules('Phone', 'Phone', 'trim');
 			$this->form_validation->set_rules('EmailAddress', 'EmailAddress', 'trim|required|valid_email');
-			$this->form_validation->set_rules('FacebookId', 'FacebookId', 'trim|valid_url');
+			$this->form_validation->set_rules('FacebookId', 'FacebookId', 'trim');
 			$this->form_validation->set_rules('ProfessinalInformation', 'ProfessinalInformation', 'trim|required');
 			$this->form_validation->set_rules('NID', 'NID', 'trim|required');
 			$this->form_validation->set_rules('DateOfBirth', 'DateOfBirth', 'trim|required');

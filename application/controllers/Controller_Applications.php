@@ -220,8 +220,8 @@ class Controller_Applications extends Admin_Controller
 			// $this->form_validation->set_rules('BKSPAdmissionYear', 'BKSPAdmissionYear', 'trim|required');
 			$this->form_validation->set_rules('CadetNo', 'Cadet No', 'trim|required');
 			// $this->form_validation->set_rules('CadetNo', 'Cadet No', 'is_unique[temp_members.cadet_no]', array('is_unique' => 'You already applied'));
-			$this->form_validation->set_rules('YearOfSSC', 'YearOfSSC', 'trim|required');
-			$this->form_validation->set_rules('YearOfHSC', 'YearOfHSC', 'trim|required');
+			$this->form_validation->set_rules('YearOfSSC', 'YearOfSSC', 'trim');
+			$this->form_validation->set_rules('YearOfHSC', 'YearOfHSC', 'trim');
 			// $this->form_validation->set_rules('YearOfAdmission', 'Year Of Admission', 'trim|required');
 			// $this->form_validation->set_rules('YearOfPass', 'Year Of Pass', 'trim|required');
 			$this->form_validation->set_rules('Address', 'Address', 'trim|required');
@@ -230,7 +230,7 @@ class Controller_Applications extends Admin_Controller
 			$this->form_validation->set_rules('Mobile', 'Mobile', 'trim|required');
 			$this->form_validation->set_rules('Phone', 'Phone', 'trim');
 			$this->form_validation->set_rules('EmailAddress', 'EmailAddress', 'trim|required|valid_email');
-			$this->form_validation->set_rules('FacebookId', 'FacebookId', 'trim|valid_url');
+			$this->form_validation->set_rules('FacebookId', 'FacebookId', 'trim');
 			$this->form_validation->set_rules('ProfessinalInformation', 'ProfessinalInformation', 'trim|required');
 			$this->form_validation->set_rules('NID', 'NID', 'trim|required');
 			$this->form_validation->set_rules('DateOfBirth', 'DateOfBirth', 'trim|required');
@@ -245,12 +245,12 @@ class Controller_Applications extends Admin_Controller
 					'spouse_name' => $this->input->post('SpouseName'),
 					'father_name' => $this->input->post('FatherName'),
 					'mother_name' => $this->input->post('MotherName'),
-					'bksp_admission_year' => date('Y',strtotime($this->input->post('BKSPAdmissionYear'))),
+					'bksp_admission_year' => $this->input->post('BKSPAdmissionYear'),
 					'cadet_no' => $this->input->post('CadetNo'),                
-					'year_of_ssc' => date('Y',strtotime($this->input->post('YearOfSSC'))),
-					'year_of_hsc' => date('Y',strtotime($this->input->post('YearOfHSC'))),
-					'degree_cadet_admission_year' => date('Y',strtotime($this->input->post('YearOfAdmission'))),
-					'degree_cadet_passing_year' => date('Y',strtotime($this->input->post('YearOfPass'))),
+					'year_of_ssc' => $this->input->post('YearOfSSC'),
+					'year_of_hsc' => $this->input->post('YearOfHSC'),
+					'degree_cadet_admission_year' => $this->input->post('YearOfAdmission'),
+					'degree_cadet_passing_year' => $this->input->post('YearOfPass'),
 					'address' => $this->input->post('Address'),
 					'blood_group' => $this->input->post('BloodGroup'),
 					'religious' => $this->input->post('Religion'),

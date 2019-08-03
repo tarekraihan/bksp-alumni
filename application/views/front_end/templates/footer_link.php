@@ -96,7 +96,8 @@
               $('#YearOfAdmission').attr('placeholder',response.YearOfAdmission);
               $('#YearOfPassLabel').text(response.YearOfPassLabel);
               $('#YearOfPass').attr('placeholder',response.YearOfPass);
-              $('#onlyForDegreeLabel').text(response.onlyForDegreeLabel);
+              $('#onlyForDegreeLabel').html(response.onlyForDegreeLabel);
+              $('#RegularStudent').html(response.RegularStudent);
             }
           });
         }).trigger('change');
@@ -114,8 +115,8 @@
             MotherName: "required",
             // BKSPAdmissionYear: "required",
             CadetNo: "required",
-            YearOfSSC: "required",
-            YearOfHSC: "required",
+            // YearOfSSC: "required",
+            // YearOfHSC: "required",
             // YearOfAdmission: "required",
             // YearOfPass: "required",
             Address: "required",
@@ -128,7 +129,7 @@
             },
             NID: "required",
             DateOfBirth: "required",
-            // nid_upload: "required",
+            ProfessinalInformation: "required",
             Gender: "required",
             // agree: "required",
           }

@@ -32,8 +32,8 @@ class En extends FrontEnd_Controller
 		// $this->form_validation->set_rules('BKSPAdmissionYear', 'BKSPAdmissionYear', 'trim|required');
 		$this->form_validation->set_rules('CadetNo', 'Cadet No', 'trim|required');
 		$this->form_validation->set_rules('CadetNo', 'Cadet No', 'is_unique[temp_members.cadet_no]', array('is_unique' => 'You already applied'));
-		$this->form_validation->set_rules('YearOfSSC', 'YearOfSSC', 'trim|required');
-		$this->form_validation->set_rules('YearOfHSC', 'YearOfHSC', 'trim|required');
+		$this->form_validation->set_rules('YearOfSSC', 'YearOfSSC', 'trim');
+		$this->form_validation->set_rules('YearOfHSC', 'YearOfHSC', 'trim');
 		// $this->form_validation->set_rules('YearOfAdmission', 'Year Of Admission', 'trim|required');
 		// $this->form_validation->set_rules('YearOfPass', 'Year Of Pass', 'trim|required');
 		$this->form_validation->set_rules('Address', 'Address', 'trim|required');
@@ -42,7 +42,7 @@ class En extends FrontEnd_Controller
 		$this->form_validation->set_rules('Mobile', 'Mobile', 'trim|required');
 		$this->form_validation->set_rules('Phone', 'Phone', 'trim');
 		$this->form_validation->set_rules('EmailAddress', 'EmailAddress', 'trim|required|valid_email');
-		$this->form_validation->set_rules('FacebookId', 'FacebookId', 'trim|valid_url');
+		$this->form_validation->set_rules('FacebookId', 'FacebookId', 'trim');
 		$this->form_validation->set_rules('ProfessinalInformation', 'ProfessinalInformation', 'trim|required');
 		$this->form_validation->set_rules('NID', 'NID', 'trim|required');
 		$this->form_validation->set_rules('DateOfBirth', 'DateOfBirth', 'trim|required');
@@ -60,12 +60,12 @@ class En extends FrontEnd_Controller
         		'spouse_name' => $this->input->post('SpouseName'),
         		'father_name' => $this->input->post('FatherName'),
                 'mother_name' => $this->input->post('MotherName'),
-                'bksp_admission_year' => date('Y',strtotime($this->input->post('BKSPAdmissionYear'))),
+                'bksp_admission_year' => $this->input->post('BKSPAdmissionYear'),
                 'cadet_no' => $this->input->post('CadetNo'),                
-                'year_of_ssc' => date('Y',strtotime($this->input->post('YearOfSSC'))),
-                'year_of_hsc' => date('Y',strtotime($this->input->post('YearOfHSC'))),
-                'degree_cadet_admission_year' => date('Y',strtotime($this->input->post('YearOfAdmission'))),
-                'degree_cadet_passing_year' => date('Y',strtotime($this->input->post('YearOfPass'))),
+                'year_of_ssc' => $this->input->post('YearOfSSC'),
+                'year_of_hsc' => $this->input->post('YearOfHSC'),
+                'degree_cadet_admission_year' => $this->input->post('YearOfAdmission'),
+                'degree_cadet_passing_year' => $this->input->post('YearOfPass'),
                 'address' => $this->input->post('Address'),
                 'blood_group' => $this->input->post('BloodGroup'),
                 'religious' => $this->input->post('Religion'),
@@ -86,20 +86,32 @@ class En extends FrontEnd_Controller
 
         	$create = $this->Model_application->create($data);
         	if($create == true) {
-                // Send Email Note yet Tested
-                // $this->load->library('email');
-                // $title = ($gender =='Male') ? 'Mr. ': 'Ms.';
-                // $title =. $name;
+                // Send Email 
+                $config = array();
+                $config['useragent']           = "CodeIgniter";
+                $config['mailpath']            = "/usr/bin/sendmail"; // or "/usr/sbin/sendmail"
+                $config['protocol']            = "smtp";
+                $config['smtp_host']           = "localhost";
+                $config['smtp_port']           = "25";
+                $config['mailtype']            = 'html';
+                $config['charset']             = 'utf-8';
+                $config['newline']             = "\r\n";
+                $config['wordwrap']            = TRUE;
+        
+                $this->load->library('email');
+                $this->email->initialize($config);
+                $title = ($gender =='Male') ? 'Mr. ': 'Ms. ';
+                $title .= $name;
 
-                // $message = "Dear ". $title ."\r\n Thank your for your application."
-                // $this->email->from('bksp1983@yahoo.com', 'Alumni Association of BKSP');
-                // $this->email->to($email);
+                $message = "Dear ". $title .",<br/> Thank your for your application. Your application received. You will be notified when admin approve your application.";
+                $this->email->from('member@bkspclub.com', 'Alumni Association of BKSP');
+                $this->email->to($email);
 
-                // $this->email->subject('Application in Alumni Association of BKSP');
-                // $this->email->message($message);
-                // $this->email->send();
+                $this->email->subject('Application in Alumni Association of BKSP');
+                $this->email->message($message);
+                $this->email->send();
                 $this->session->unset_userdata('cadetNo');
-        		$this->session->set_flashdata('success', 'Successfully appplied');
+        		$this->session->set_flashdata('success', 'Successfully appplied. Please check your email.');
         		redirect('cadet-no', 'refresh');
         	}
         	else {
@@ -165,7 +177,8 @@ class En extends FrontEnd_Controller
                     "YearOfAdmission" => "Year of Admission",
                     "YearOfPassLabel" => "Year of Pass",
                     "YearOfPass" => "Year of Pass",
-                    "onlyForDegreeLabel" => "Only for degree Cadet",
+                    "onlyForDegreeLabel" => "Only for degree Cadet <small class='text-danger'>(If you are not regular student please fill up this part ignore the regular student part)</small>",
+                    "RegularStudent" => "Only for regular student <small class='text-danger'>(If you are regular student then fill up the form otherwise ignore this part)</small>",
                 ],
                 "BN" => [
                     "NameLabel" => "নাম",
@@ -210,7 +223,8 @@ class En extends FrontEnd_Controller
                     "YearOfAdmission" => "ভর্তির সাল",
                     "YearOfPassLabel" => "পরীক্ষোত্তীর্ণ হত্তয়ার সাল",
                     "YearOfPass" => "পরীক্ষোত্তীর্ণ হত্তয়ার সাল",
-                    "onlyForDegreeLabel" => "কেবল ডিগ্রি ক্যাডেটের জন্য",
+                    "onlyForDegreeLabel" => "কেবল ডিগ্রি ক্যাডেটের জন্য  <small class='text-danger'>(If you are not regular student please fill up this part ignore the regular student part)</small>",
+                    "RegularStudent" => "Only for regular student <small class='text-danger'>(If you are regular student then fill up the form otherwise ignore this part)</small>",
                 ]
             ];
 
